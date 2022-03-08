@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+    body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url({{url_for('static',filename='265693.png')}});
+    background-size: cover;
+
+}
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search {
+    margin-bottom: auto;
+    margin-top: 50px;
+    height: 70px;
+    background-color: #fff;
+    padding: 10px
+}
+
+.search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear
+}
+
+.search .search-input {
+    padding: 0 10px;
+    width: 550px;
+    caret-color: #2B253A;
+    font-size: 21px;
+    font-weight: 300;
+    color: black;
+    transition: width 0.4s linear
+}
+
+.search:hover>.search-icon {
+    background: #1A237E;
+    color: #fff
+}
+
+.search-icon {
+    height: 50px;
+    width: 50px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #2B253A
+}
+
+a:link {
+    text-decoration: none
+}
+    </style>
+</head>
+<body>
+<div>
+    <img src="https://www.logolynx.com/images/logolynx/49/49548804a29784a2ab1361b0f499f264.png" class="logo">
+</div>
+<div class="d-flex justify-content-center h-100">
+    <div class="search">
+        <form method="post">
+        <input type="search" class="search-input" placeholder="search..." name="q" value="{{ request.form['q'] }}">
+            <button name="search" class="search-icon" value="{{ request.form['q'] }}"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
