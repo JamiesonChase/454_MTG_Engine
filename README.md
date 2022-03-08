@@ -8,3 +8,9 @@ pip install Flask
 # Running Instructions:
 1. Run main.py
 2. open site on http://127.0.0.1:5000/
+
+# Screenshots
+<p float="left">
+  <img src="/Screenshots/HomePage_concept.png" alt="drawing" width="500"/>
+  <img src="/Screenshots/Search_Concept.png" alt="drawing" width="500"/>
+</p>
