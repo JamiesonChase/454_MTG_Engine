@@ -1,9 +1,9 @@
-from flask import Flask, url_for, render_template,request, redirect
+import os
 import json
+from flask import Flask, url_for, render_template, request, redirect
 from whoosh.qparser import MultifieldParser
 from whoosh import index
 from whoosh.fields import Schema, TEXT, ID
-import os, os.path
 
 app = Flask(__name__)
 
