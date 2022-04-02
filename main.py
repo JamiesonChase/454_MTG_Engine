@@ -11,7 +11,6 @@ from whoosh.fields import Schema, TEXT, ID
 from private.config import app_key, db_key
 from models import db, User
 from forms import LoginForm, RegisterForm
-from searcher import MTGSearcher
  
 
 # configure the main app
