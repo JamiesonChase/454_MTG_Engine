@@ -1,40 +1,46 @@
 import os
 import json
 from flask import Flask, url_for, render_template, request, redirect
-from whoosh.qparser import MultifieldParser
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_bcrypt import Bcrypt
 from whoosh import index
+from whoosh.qparser import MultifieldParser
 from whoosh.fields import Schema, TEXT, ID
 
+# internal app imports
+from private.config import app_key, db_key
+from models import db, User
+from forms import LoginForm, RegisterForm
+ 
+
+# configure the main app
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = db_key
+app.config['SECRET_KEY'] = app_key
+bcrypt = Bcrypt(app)   # for hashing passwords
 
 
-with open('test.json') as f:
-    data = json.load(f)
-
-schema = Schema(name=TEXT(stored=True),
-                id=TEXT(stored = True),
-                desc=TEXT(stored = True),
-                url=TEXT(stored = True),
-                image_url=TEXT(stored = True))
-
-# create empty index directory
-
-if not os.path.exists("index_dir"):
-    os.mkdir("index_dir")
-
-ix = index.create_in("index_dir", schema)
-writer = ix.writer()
-
-for i in range(len(data)):
-    writer.add_document(name=data[i]['name'],
-                        id = data[i]['id'],
-                        desc=data[i]['desc'],
-                        url=data[i]['url'],
-                        image_url=data[i]['image_url'])
-writer.commit()
+# configure the sql database
+db.app = app
+db.init_app(app)
+db.create_all()   # creates the tables defined by the models in models.py
 
 
-@app.route('/', methods=('GET','POST')) # this will run on startup, renders home.html
+# configure the flask_login manager
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'        # default page when user tries to access a page before logging in
+app.config['USE_SESSION_FOR_NEXT'] = True # remove the blocked route from the url
+
+# callback for verifying the user when a request is made
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+# home page: this will run on startup, renders home.html
+@app.route('/', methods=('GET','POST'))
+@login_required
 def home():
     if request.method == 'POST': #processes post request from searching
         q = request.form['q']
@@ -42,7 +48,47 @@ def home():
 
     return render_template('home.html') #renders main homepage
 
+
+# login page
+@app.route('/login', methods=('GET','POST'))
+def login():
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if bcrypt.check_password_hash(user.password, form.password.data):
+                login_user(user)
+                return redirect(url_for('home'))
+
+    return render_template('login.html', form=form)
+
+
+# logout page, immediately redirects to the login page
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+
+# register page for creating new user
+@app.route('/register', methods=('GET','POST'))
+def register():
+    form = RegisterForm()
+
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data)
+        new_user = User(username=form.username.data, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect(url_for('login'))
+
+    return render_template('register.html', form=form)
+
+
+# results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
+@login_required
 def results():
     if request.method == 'POST': # processes post request from searching
         q = request.form['q']
@@ -51,7 +97,7 @@ def results():
     Search = request.args['q'] # getting the text from the query
     cards = []
 
-    q = MultifieldParser(["name", "desc"], schema=ix.schema)
+    q = MultifieldParser(['name', 'desc'], schema=ix.schema)
     q = q.parse(Search)
 
     with ix.searcher() as s:
@@ -66,8 +112,31 @@ def results():
     print(cards)
     return render_template('results.html',msg=Search,card=cards) #renders results page, passing cards and query.
 
-def main():
 
-    app.run() # run flask application
+# entry point to the application
+if __name__ == '__main__':
+    with open('test.json') as f:
+        data = json.load(f)
 
-main()
+    schema = Schema(name=TEXT(stored=True),
+                    id=TEXT(stored = True),
+                    desc=TEXT(stored = True),
+                    url=TEXT(stored = True),
+                    image_url=TEXT(stored = True))
+
+    # create empty index directory
+    if not os.path.exists('index_dir'):
+        os.mkdir('index_dir')
+
+    ix = index.create_in('index_dir', schema)
+    writer = ix.writer()
+
+    for i in range(len(data)):
+        writer.add_document(name=data[i]['name'],
+                            id = data[i]['id'],
+                            desc=data[i]['desc'],
+                            url=data[i]['url'],
+                            image_url=data[i]['image_url'])
+    writer.commit()
+
+    app.run(debug=True) # run flask application
