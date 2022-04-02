@@ -11,6 +11,7 @@ from whoosh.fields import Schema, TEXT, ID
 from private.config import app_key, db_key
 from models import db, User
 from forms import LoginForm, RegisterForm
+from searcher import MTGSearcher
  
 
 # configure the main app
@@ -32,21 +33,11 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'        # default page when user tries to access a page before logging in
 app.config['USE_SESSION_FOR_NEXT'] = True # remove the blocked route from the url
 
+
 # callback for verifying the user when a request is made
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-
-# home page: this will run on startup, renders home.html
-@app.route('/', methods=('GET','POST'))
-@login_required
-def home():
-    if request.method == 'POST': #processes post request from searching
-        q = request.form['q']
-        return redirect(url_for('results',q=q))
-
-    return render_template('home.html') #renders main homepage
 
 
 # login page
@@ -86,6 +77,17 @@ def register():
     return render_template('register.html', form=form)
 
 
+# home page: this will run on startup, renders home.html
+@app.route('/', methods=('GET','POST'))
+@login_required
+def home():
+    if request.method == 'POST': #processes post request from searching
+        q = request.form['q']
+        return redirect(url_for('results',q=q))
+
+    return render_template('home.html') #renders main homepage
+
+
 # results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
 @login_required
@@ -118,6 +120,7 @@ if __name__ == '__main__':
     with open('test.json') as f:
         data = json.load(f)
 
+    global schema
     schema = Schema(name=TEXT(stored=True),
                     id=TEXT(stored = True),
                     desc=TEXT(stored = True),
@@ -128,6 +131,7 @@ if __name__ == '__main__':
     if not os.path.exists('index_dir'):
         os.mkdir('index_dir')
 
+    global ix
     ix = index.create_in('index_dir', schema)
     writer = ix.writer()
 
@@ -138,5 +142,4 @@ if __name__ == '__main__':
                             url=data[i]['url'],
                             image_url=data[i]['image_url'])
     writer.commit()
-
     app.run(debug=True) # run flask application
