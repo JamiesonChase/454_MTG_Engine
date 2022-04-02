@@ -2,3 +2,5 @@
 
 # annoying mac os file
 .DS_Store
+
+secret_keys.py
