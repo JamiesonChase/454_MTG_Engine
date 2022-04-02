@@ -11,6 +11,7 @@
     />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Magic The Gathering</title>
 
     <style>
       body {
@@ -75,13 +76,14 @@
       }
 
       a:link {
+        float: right;
+        margin-right: 10px;
+        color: #897d9c;
         text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <a href="{{url_for('login')}}">Login Page</a><br />
-    <a href="{{url_for('register')}}">Register Page</a><br />
     <a href="{{url_for('logout')}}">Logout</a><br />
     <div>
       <img

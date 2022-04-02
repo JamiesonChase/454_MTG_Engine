@@ -1,66 +1,47 @@
 import os
 import json
 from flask import Flask, url_for, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
-from flask_wtf import FlaskForm
 from flask_bcrypt import Bcrypt
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, Length, ValidationError
 from whoosh import index
 from whoosh.qparser import MultifieldParser
 from whoosh.fields import Schema, TEXT, ID
-import secret_keys
 
+# internal app imports
+from private.config import app_key, db_key
+from models import db, User
+from forms import LoginForm, RegisterForm
+ 
 
+# configure the main app
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = secret_keys.cookie_key
-bcrypt = Bcrypt(app)
-db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = db_key
+app.config['SECRET_KEY'] = app_key
+bcrypt = Bcrypt(app)   # for hashing passwords
 
 
+# configure the sql database
+db.app = app
+db.init_app(app)
+db.create_all()   # creates the tables defined by the models in models.py
+
+
+# configure the flask_login manager
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'login'        # default page when user tries to access a page before logging in
+app.config['USE_SESSION_FOR_NEXT'] = True # remove the blocked route from the url
 
+# callback for verifying the user when a request is made
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), nullable=False, unique=True)
-    password = db.Column(db.String(80), nullable=False)
-
-
-class RegisterForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(min=4,max=20)],
-                           render_kw={'placeholder': 'Username'})
-    password = PasswordField(validators=[InputRequired(), Length(min=4,max=20)],
-                             render_kw={'placeholder': 'Password'})
-    submit = SubmitField('Register')
-
-    def validate_username(self, username):
-        existing_user_username = User.query.filter_by(
-            username = username.data).first()
-        if existing_user_username:
-            raise ValidationError('Username taken. Please enter a new one')
-
-class LoginForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(min=4,max=20)],
-                           render_kw={'placeholder': 'Username'})
-    password = PasswordField(validators=[InputRequired(), Length(min=4,max=20)],
-                             render_kw={'placeholder': 'Password'})
-    submit = SubmitField('Login')
-
-
-@app.route('/', methods=('GET','POST')) # this will run on startup, renders home.html
-#@login_required
+# home page: this will run on startup, renders home.html
+@app.route('/', methods=('GET','POST'))
+@login_required
 def home():
-    # if 'username' not in session:
-    #     return redirect(url_for('login'))
     if request.method == 'POST': #processes post request from searching
         q = request.form['q']
         return redirect(url_for('results',q=q))
@@ -68,6 +49,7 @@ def home():
     return render_template('home.html') #renders main homepage
 
 
+# login page
 @app.route('/login', methods=('GET','POST'))
 def login():
     form = LoginForm()
@@ -82,12 +64,14 @@ def login():
     return render_template('login.html', form=form)
 
 
+# logout page, immediately redirects to the login page
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     logout_user()
     return redirect(url_for('login'))
 
 
+# register page for creating new user
 @app.route('/register', methods=('GET','POST'))
 def register():
     form = RegisterForm()
@@ -102,7 +86,9 @@ def register():
     return render_template('register.html', form=form)
 
 
+# results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
+@login_required
 def results():
     if request.method == 'POST': # processes post request from searching
         q = request.form['q']
@@ -127,6 +113,7 @@ def results():
     return render_template('results.html',msg=Search,card=cards) #renders results page, passing cards and query.
 
 
+# entry point to the application
 if __name__ == '__main__':
     with open('test.json') as f:
         data = json.load(f)
@@ -138,7 +125,6 @@ if __name__ == '__main__':
                     image_url=TEXT(stored = True))
 
     # create empty index directory
-
     if not os.path.exists('index_dir'):
         os.mkdir('index_dir')
 
