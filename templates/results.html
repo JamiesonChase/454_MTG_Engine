@@ -118,18 +118,18 @@
 
       <div class="card-grid">
         <div class="card-grid-inner">
-          {% for image_url in card%}
+          {% for card in card %}
           <div class="card-grid-item">
-            <a
-              class="card-grid-item-card"
-              href="https://scryfall.com/card/war/54/jace-wielder-of-mysteries"
-            >
+            <a class="card-grid-item-card" href="{{ card.url }}">
               <span class="card-grid-item-invisible-label" aria-hidden="true"
-                >Jace, Wielder of Mysteries</span
+                >{{ card.name }}</span
               >
               <div class="card-grid-item-card-faces">
                 <div class="card-grid-item-card-front">
-                  <img class="card c15 border-black" src="{{ image_url }}" />
+                  <img
+                    class="card c15 border-black"
+                    src="{{ card.image_url }}"
+                  />
                 </div>
               </div>
             </a>

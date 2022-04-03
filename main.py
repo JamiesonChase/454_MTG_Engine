@@ -80,9 +80,10 @@ def register():
 @app.route('/', methods=('GET','POST'))
 @login_required
 def home():
-    if request.method == 'POST': #processes post request from searching
+    if request.method == 'POST': # processes post request from searching
         q = request.form['q']
-        return redirect(url_for('results',q=q))
+        if len(q) > 0:
+            return redirect(url_for('results',q=q)) # only search if the user entered something
 
     return render_template('home.html') #renders main homepage
 
@@ -93,25 +94,29 @@ def home():
 def results():
     if request.method == 'POST': # processes post request from searching
         q = request.form['q']
-        return redirect(url_for('results',q=q))
+        if len(q) > 0:
+            return redirect(url_for('results',q=q))
 
     Search = request.args['q'] # getting the text from the query
     cards = []
 
-    q = MultifieldParser(['name', 'desc'], schema=ix.schema)
-    q = q.parse(Search)
+    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(Search)
 
     with ix.searcher() as s:
         results = s.search_page(q, 1, pagelen=12)
-        print(results[0:12])
+        #print(results[0:12])
         for result in results:
+            print()
+            print(result)
+            print()
             cards.append({
-                'image_url':result['image_url'],
-                'url':result['url']
+                'name': result['name'],
+                'image_url': result['image_url'],
+                'url': result['url']
             })
 
-    print(cards)
-    return render_template('results.html',msg=Search,card=cards) #renders results page, passing cards and query.
+    #print(cards)
+    return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
 
 
 # entry point to the application
