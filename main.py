@@ -1,16 +1,14 @@
-import os
-import json
 from flask import Flask, url_for, render_template, request, redirect
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_bcrypt import Bcrypt
-from whoosh import index
+from whoosh.index import *
 from whoosh.qparser import MultifieldParser
-from whoosh.fields import Schema, TEXT, ID
 
 # internal app imports
-from private.config import app_key, db_key
+from private.config import db_key, app_key
 from models import db, User
 from forms import LoginForm, RegisterForm
+from whoosh_index import indexData
  
 
 # configure the main app
@@ -20,7 +18,7 @@ app.config['SECRET_KEY'] = app_key
 bcrypt = Bcrypt(app)   # for hashing passwords
 
 
-# configure the sql database
+# configure the sqlite database
 db.app = app
 db.init_app(app)
 db.create_all()   # creates the tables defined by the models in models.py
@@ -106,9 +104,6 @@ def results():
         results = s.search_page(q, 1, pagelen=12)
         #print(results[0:12])
         for result in results:
-            print()
-            print(result)
-            print()
             cards.append({
                 'name': result['name'],
                 'image_url': result['image_url'],
@@ -117,33 +112,10 @@ def results():
 
     #print(cards)
     return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
-
+    
 
 # entry point to the application
 if __name__ == '__main__':
-    with open('test.json') as f:
-        data = json.load(f)
-
-    global schema
-    schema = Schema(name=TEXT(stored=True),
-                    id=TEXT(stored = True),
-                    desc=TEXT(stored = True),
-                    url=TEXT(stored = True),
-                    image_url=TEXT(stored = True))
-
-    # create empty index directory
-    if not os.path.exists('index_dir'):
-        os.mkdir('index_dir')
-
     global ix
-    ix = index.create_in('index_dir', schema)
-    writer = ix.writer()
-
-    for i in range(len(data)):
-        writer.add_document(name=data[i]['name'],
-                            id = data[i]['id'],
-                            desc=data[i]['desc'],
-                            url=data[i]['url'],
-                            image_url=data[i]['image_url'])
-    writer.commit()
+    ix = indexData()
     app.run(debug=True) # run flask application
