@@ -1,7 +1,6 @@
 from flask import Flask, url_for, render_template, request, redirect
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_bcrypt import Bcrypt
-from whoosh.index import *
 from whoosh.qparser import MultifieldParser
 
 # internal app imports
