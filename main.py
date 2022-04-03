@@ -5,7 +5,7 @@ from whoosh.index import *
 from whoosh.qparser import MultifieldParser
 
 # internal app imports
-from private.config import db_key, app_key
+from config import db_key, app_key
 from models import db, User
 from forms import LoginForm, RegisterForm
 from whoosh_index import indexData
