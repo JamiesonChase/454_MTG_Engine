@@ -101,7 +101,6 @@ def results():
 
     with ix.searcher() as s:
         results = s.search_page(q, 1, pagelen=12)
-        #print(results[0:12])
         for result in results:
             cards.append({
                 'name': result['name'],
@@ -109,9 +108,15 @@ def results():
                 'url': result['url']
             })
 
-    #print(cards)
     return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
-    
+
+
+# decks page, shows list of pre-made and custom decks
+@app.route('/decks', methods=('GET', 'POST'))
+@login_required
+def decks():
+    return render_template('decks.html')    
+
 
 # entry point to the application
 if __name__ == '__main__':
