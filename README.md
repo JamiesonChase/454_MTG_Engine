@@ -17,7 +17,7 @@ pip install Flask, Flask-Bcrypt, Flask-Login, Flask-SQLAlchemy, Flask-WTF, bcryp
 
 <p float="left">
   <img src="/Screenshots/Login_concept.png" alt="drawing" width="500"/>
-  <img src="/Screenshots/HomePage_oncept.png" alt="drawing" width="500"/>
+  <img src="/Screenshots/HomePage_concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/Search_Concept.png" alt="drawing" width="500"/>
-  <img src="/Screenshots/CardPage_Concept.png" alt="drawing" width="500"/>
+  <img src="/Screenshots/CardPage_concept.png" alt="drawing" width="500"/>
 </p>
