@@ -13,7 +13,17 @@
       </div>
     </div>
     <div class="card-text">
-      <p>{{ card[0].desc }}</p>
+        <h1 class="card-text-title" lang="en">
+          <span class="card-text-card-name">{{ card[0].name }}</span>
+        </h1>
+      <p class="card-text-type-line">{{ card[0].types }}</p>
+      <div class="card-text-oracle">
+        <p>{{ card[0].desc }}</p>
+      </div>
+      <div class="card-text-flavor">
+      <p>{{ card[0].flavor }}</p>
+      </div>
+
     </div>
   </div>
   </div>

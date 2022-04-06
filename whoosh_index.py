@@ -8,8 +8,15 @@ class CardSchema(SchemaClass):
     id        = ID
     name      = TEXT(stored=True)
     desc      = TEXT(stored=True)
+    flavor = TEXT(stored=True)
     url       = TEXT(stored=True)
     image_url = TEXT(stored=True)
+    power = TEXT(stored=True)
+    toughness = TEXT(stored=True)
+    rarity = TEXT(stored=True)
+    colors = TEXT(stored=True)
+    cost = TEXT(stored=True)
+    types = TEXT(stored=True)
 
 
 def indexData():
@@ -28,10 +35,17 @@ def indexData():
     with open(card_data) as f:
         data = json.load(f)
     for card in data:
-        writer.add_document(name      = card['name'],
-                            id        = card['id'],
-                            desc      = card['desc'],
-                            url       = card['url'],
-                            image_url = card['image_url'])
+        writer.add_document(name=card['name'],
+                            id = card['id'],
+                            desc=card['desc'],
+                            flavor=card['flavor'],
+                            url=card['url'],
+                            image_url=card['image_url'],
+                            power = card['power'],
+                            toughness = card['toughness'],
+                            rarity = card['rarity'],
+                            colors = card['colors'],
+                            cost = card['cost'],
+                            types = card['types'])
     writer.commit()
     return ix

@@ -99,7 +99,10 @@ def card_page(card_name):
                 'name': result['name'],
                 'image_url': result['image_url'],
                 'desc': result['desc'],
-                'url': result['url']
+                'flavor':result['flavor'],
+                'url': result['url'],
+                'types': result['types'],
+                'cost': '3'
             })
             print(cards)
     return render_template('card.html',card=cards)
@@ -120,13 +123,10 @@ def results():
 
     with ix.searcher() as s:
         results = s.search_page(q, 1, pagelen=12)
-        for result in results:
+        for card in results:
             cards.append({
-                'name': result['name'],
-                'image_url': result['image_url'],
-                'desc': result['desc'],
-                'url': result['url']
-            })
+                'name': card['name'],
+                'image_url': card['image_url']})
 
     return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
 
