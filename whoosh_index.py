@@ -8,15 +8,15 @@ class CardSchema(SchemaClass):
     id        = ID
     name      = TEXT(stored=True)
     desc      = TEXT(stored=True)
-    flavor = TEXT(stored=True)
+    flavor    = TEXT(stored=True)
     url       = TEXT(stored=True)
     image_url = TEXT(stored=True)
-    power = TEXT(stored=True)
+    power     = TEXT(stored=True)
     toughness = TEXT(stored=True)
-    rarity = TEXT(stored=True)
-    colors = TEXT(stored=True)
-    cost = TEXT(stored=True)
-    types = TEXT(stored=True)
+    rarity    = TEXT(stored=True)
+    colors    = TEXT(stored=True)
+    cost      = TEXT(stored=True)
+    types     = TEXT(stored=True)
 
 
 def indexData():
