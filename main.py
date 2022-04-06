@@ -84,6 +84,9 @@ def home():
 
     return render_template('home.html') #renders main homepage
 
+@app.route('/card/<card_name>')
+def card_page(card_name):
+    return render_template('card.html',card=card_name)
 
 # results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
