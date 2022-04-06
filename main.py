@@ -1,5 +1,5 @@
 from flask import Flask, url_for, render_template, request, redirect
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import login_user, LoginManager, login_required, logout_user
 from flask_bcrypt import Bcrypt
 from whoosh.qparser import MultifieldParser
 
@@ -85,8 +85,24 @@ def home():
     return render_template('home.html') #renders main homepage
 
 @app.route('/card/<card_name>')
+@login_required
 def card_page(card_name):
-    return render_template('card.html',card=card_name)
+    Search = card_name # getting the text from the query
+    cards = []
+
+    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(Search)
+
+    with ix.searcher() as s:
+        results = s.search_page(q, 1, pagelen=1)
+        for result in results:
+            cards.append({
+                'name': result['name'],
+                'image_url': result['image_url'],
+                'desc': result['desc'],
+                'url': result['url']
+            })
+            print(cards)
+    return render_template('card.html',card=cards)
 
 # results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
@@ -108,6 +124,7 @@ def results():
             cards.append({
                 'name': result['name'],
                 'image_url': result['image_url'],
+                'desc': result['desc'],
                 'url': result['url']
             })
 
