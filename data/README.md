@@ -1,5 +1,6 @@
 # Card Data fields
 
+below is the data fields for ```MTGCards.json``` file
 ```json
    {
       "name": "Kor Outfitter",
