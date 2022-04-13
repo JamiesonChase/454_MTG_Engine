@@ -22,10 +22,12 @@ class CardSchema(SchemaClass):
 def indexData():
     schema = CardSchema()
 
-    # create empty index directory
+    # ensure index directory exists
     if not os.path.exists(index_path):
         os.mkdir(index_path)
 
+    # if the index already exists, open and return it
+    # delete contents of ./data/indexes after changes to force it to rebuild
     if exists_in(index_path):
         return open_dir(index_path)
     
@@ -34,18 +36,22 @@ def indexData():
 
     with open(card_data) as f:
         data = json.load(f)
+
     for card in data:
-        writer.add_document(name=card['name'],
-                            id = card['id'],
-                            desc=card['desc'],
-                            flavor=card['flavor'],
-                            url=card['url'],
-                            image_url=card['image_url'],
-                            power = card['power'],
-                            toughness = card['toughness'],
-                            rarity = card['rarity'],
-                            colors = card['colors'],
-                            cost = card['cost'],
-                            types = card['types'])
+        writer.add_document(
+            name      = card['name'],
+            id        = card['id'],
+            desc      = card['desc'],
+            flavor    = card['flavor'],
+            url       = card['url'],
+            image_url = card['image_url'],
+            power     = card['power'],
+            toughness = card['toughness'],
+            rarity    = card['rarity'],
+            colors    = card['colors'],
+            cost      = card['cost'],
+            types     = card['types']
+        )
+
     writer.commit()
     return ix

@@ -1,0 +1,2216 @@
+[
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11303-MODO.txt",
+        "main": [
+            {
+                "count": "2",
+                "name": "Frost Ogre"
+            },
+            {
+                "count": "1",
+                "name": "Terashi's Grasp"
+            },
+            {
+                "count": "1",
+                "name": "Ronin Cliffrider"
+            },
+            {
+                "count": "1",
+                "name": "Terashi's Verdict"
+            },
+            {
+                "count": "1",
+                "name": "Akki Raider"
+            },
+            {
+                "count": "1",
+                "name": "Shining Shoal"
+            },
+            {
+                "count": "1",
+                "name": "Blood Rites"
+            },
+            {
+                "count": "1",
+                "name": "Devoted Retainer"
+            },
+            {
+                "count": "1",
+                "name": "Kami of Ancient Law"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Riftwalker"
+            },
+            {
+                "count": "2",
+                "name": "Cage of Hands"
+            },
+            {
+                "count": "1",
+                "name": "Hearth Kami"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Diviner"
+            },
+            {
+                "count": "2",
+                "name": "Mothrider Samurai"
+            },
+            {
+                "count": "1",
+                "name": "Blessed Breath"
+            },
+            {
+                "count": "2",
+                "name": "Call to Glory"
+            },
+            {
+                "count": "1",
+                "name": "Indomitable Will"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Healer"
+            },
+            {
+                "count": "1",
+                "name": "Nagao, Bound by Honor"
+            },
+            {
+                "count": "5",
+                "name": "Mountain"
+            },
+            {
+                "count": "12",
+                "name": "Plains"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11315-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Goblin Cohort"
+            },
+            {
+                "count": "2",
+                "name": "Frost Ogre"
+            },
+            {
+                "count": "1",
+                "name": "Shinka Gatekeeper"
+            },
+            {
+                "count": "1",
+                "name": "Frostling"
+            },
+            {
+                "count": "1",
+                "name": "Kyoki, Sanity's Eclipse"
+            },
+            {
+                "count": "1",
+                "name": "Psychic Spear"
+            },
+            {
+                "count": "1",
+                "name": "Pain Kami"
+            },
+            {
+                "count": "1",
+                "name": "Rend Spirit"
+            },
+            {
+                "count": "1",
+                "name": "Waking Nightmare"
+            },
+            {
+                "count": "2",
+                "name": "Ember-Fist Zubera"
+            },
+            {
+                "count": "1",
+                "name": "Scuttling Death"
+            },
+            {
+                "count": "1",
+                "name": "Soulless Revival"
+            },
+            {
+                "count": "2",
+                "name": "Brutal Deceiver"
+            },
+            {
+                "count": "1",
+                "name": "Gibbering Kami"
+            },
+            {
+                "count": "1",
+                "name": "Nezumi Ronin"
+            },
+            {
+                "count": "1",
+                "name": "Rend Flesh"
+            },
+            {
+                "count": "1",
+                "name": "Yamabushi's Flame"
+            },
+            {
+                "count": "1",
+                "name": "Distress"
+            },
+            {
+                "count": "8",
+                "name": "Mountain"
+            },
+            {
+                "count": "9",
+                "name": "Swamp"
+            },
+            {
+                "count": "2",
+                "name": "Befoul"
+            },
+            {
+                "count": "2",
+                "name": "Befoul"
+            },
+            {
+                "count": "1",
+                "name": "Call for Blood"
+            },
+            {
+                "count": "1",
+                "name": "Goblin Cohort"
+            },
+            {
+                "count": "1",
+                "name": "Mending Hands"
+            },
+            {
+                "count": "1",
+                "name": "Shimmering Glasskite"
+            },
+            {
+                "count": "1",
+                "name": "Hokori, Dust Drinker"
+            },
+            {
+                "count": "1",
+                "name": "Orb of Dreams"
+            },
+            {
+                "count": "1",
+                "name": "Vital Surge"
+            },
+            {
+                "count": "1",
+                "name": "Stir the Grave"
+            },
+            {
+                "count": "1",
+                "name": "Soratami Seer"
+            },
+            {
+                "count": "2",
+                "name": "Counsel of the Soratami"
+            },
+            {
+                "count": "1",
+                "name": "The Unspeakable"
+            },
+            {
+                "count": "1",
+                "name": "Lifted by Clouds"
+            },
+            {
+                "count": "1",
+                "name": "Rag Dealer"
+            },
+            {
+                "count": "1",
+                "name": "Waterveil Cavern"
+            },
+            {
+                "count": "1",
+                "name": "Deathcurse Ogre"
+            },
+            {
+                "count": "1",
+                "name": "Sokenzan Bruiser"
+            },
+            {
+                "count": "1",
+                "name": "Student of Elements"
+            },
+            {
+                "count": "1",
+                "name": "Akki Rockspeaker"
+            },
+            {
+                "count": "1",
+                "name": "Burr Grafter"
+            },
+            {
+                "count": "1",
+                "name": "Kami of the Waning Moon"
+            },
+            {
+                "count": "1",
+                "name": "Stone Rain"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "2",
+                "name": "Befoul"
+            },
+            {
+                "count": "1",
+                "name": "Call for Blood"
+            },
+            {
+                "count": "1",
+                "name": "Goblin Cohort"
+            },
+            {
+                "count": "1",
+                "name": "Mending Hands"
+            },
+            {
+                "count": "1",
+                "name": "Shimmering Glasskite"
+            },
+            {
+                "count": "1",
+                "name": "Hokori, Dust Drinker"
+            },
+            {
+                "count": "1",
+                "name": "Orb of Dreams"
+            },
+            {
+                "count": "1",
+                "name": "Vital Surge"
+            },
+            {
+                "count": "1",
+                "name": "Stir the Grave"
+            },
+            {
+                "count": "1",
+                "name": "Soratami Seer"
+            },
+            {
+                "count": "2",
+                "name": "Counsel of the Soratami"
+            },
+            {
+                "count": "1",
+                "name": "The Unspeakable"
+            },
+            {
+                "count": "1",
+                "name": "Lifted by Clouds"
+            },
+            {
+                "count": "1",
+                "name": "Rag Dealer"
+            },
+            {
+                "count": "1",
+                "name": "Waterveil Cavern"
+            },
+            {
+                "count": "1",
+                "name": "Deathcurse Ogre"
+            },
+            {
+                "count": "1",
+                "name": "Sokenzan Bruiser"
+            },
+            {
+                "count": "1",
+                "name": "Student of Elements"
+            },
+            {
+                "count": "1",
+                "name": "Akki Rockspeaker"
+            },
+            {
+                "count": "1",
+                "name": "Burr Grafter"
+            },
+            {
+                "count": "1",
+                "name": "Kami of the Waning Moon"
+            },
+            {
+                "count": "1",
+                "name": "Stone Rain"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11318-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Matsu-Tribe Sniper"
+            },
+            {
+                "count": "1",
+                "name": "Genju of the Cedars"
+            },
+            {
+                "count": "1",
+                "name": "Kami of False Hope"
+            },
+            {
+                "count": "1",
+                "name": "Waxmane Baku"
+            },
+            {
+                "count": "1",
+                "name": "Budoka Pupil"
+            },
+            {
+                "count": "1",
+                "name": "Gnarled Mass"
+            },
+            {
+                "count": "1",
+                "name": "Petalmane Baku"
+            },
+            {
+                "count": "1",
+                "name": "Child of Thorns"
+            },
+            {
+                "count": "1",
+                "name": "Burr Grafter"
+            },
+            {
+                "count": "1",
+                "name": "Dripping-Tongue Zubera"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Blademaster"
+            },
+            {
+                "count": "1",
+                "name": "Sakura-Tribe Elder"
+            },
+            {
+                "count": "1",
+                "name": "Mothrider Samurai"
+            },
+            {
+                "count": "1",
+                "name": "Serpent Skin"
+            },
+            {
+                "count": "1",
+                "name": "Candles' Glow"
+            },
+            {
+                "count": "3",
+                "name": "Kabuto Moth"
+            },
+            {
+                "count": "1",
+                "name": "Myojin of Cleansing Fire"
+            },
+            {
+                "count": "1",
+                "name": "Hankyu"
+            },
+            {
+                "count": "1",
+                "name": "Kami of the Hunt"
+            },
+            {
+                "count": "1",
+                "name": "Matsu-Tribe Decoy"
+            },
+            {
+                "count": "10",
+                "name": "Forest"
+            },
+            {
+                "count": "8",
+                "name": "Plains"
+            },
+            {
+                "count": "8",
+                "name": "Plains"
+            },
+            {
+                "count": "2",
+                "name": "Harbinger of Spring"
+            },
+            {
+                "count": "1",
+                "name": "Mending Hands"
+            },
+            {
+                "count": "1",
+                "name": "Scaled Hulk"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Palliator"
+            },
+            {
+                "count": "1",
+                "name": "Traproot Kami"
+            },
+            {
+                "count": "1",
+                "name": "Hisoka's Defiance"
+            },
+            {
+                "count": "1",
+                "name": "Orochi Leafcaller"
+            },
+            {
+                "count": "1",
+                "name": "Reach Through Mists"
+            },
+            {
+                "count": "1",
+                "name": "Thoughtbind"
+            },
+            {
+                "count": "1",
+                "name": "Hair-Strung Koto"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Riftwalker"
+            },
+            {
+                "count": "1",
+                "name": "Pious Kitsune"
+            },
+            {
+                "count": "1",
+                "name": "Rend Flesh"
+            },
+            {
+                "count": "1",
+                "name": "Sift Through Sands"
+            },
+            {
+                "count": "1",
+                "name": "Wandering Ones"
+            },
+            {
+                "count": "1",
+                "name": "Akki Rockspeaker"
+            },
+            {
+                "count": "1",
+                "name": "Devouring Rage"
+            },
+            {
+                "count": "1",
+                "name": "Nine-Ringed Bo"
+            },
+            {
+                "count": "1",
+                "name": "Quiet Purity"
+            },
+            {
+                "count": "1",
+                "name": "Scuttling Death"
+            },
+            {
+                "count": "1",
+                "name": "Terashi's Cry"
+            },
+            {
+                "count": "1",
+                "name": "Phantom Wings"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "8",
+                "name": "Plains"
+            },
+            {
+                "count": "2",
+                "name": "Harbinger of Spring"
+            },
+            {
+                "count": "1",
+                "name": "Mending Hands"
+            },
+            {
+                "count": "1",
+                "name": "Scaled Hulk"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Palliator"
+            },
+            {
+                "count": "1",
+                "name": "Traproot Kami"
+            },
+            {
+                "count": "1",
+                "name": "Hisoka's Defiance"
+            },
+            {
+                "count": "1",
+                "name": "Orochi Leafcaller"
+            },
+            {
+                "count": "1",
+                "name": "Reach Through Mists"
+            },
+            {
+                "count": "1",
+                "name": "Thoughtbind"
+            },
+            {
+                "count": "1",
+                "name": "Hair-Strung Koto"
+            },
+            {
+                "count": "1",
+                "name": "Kitsune Riftwalker"
+            },
+            {
+                "count": "1",
+                "name": "Pious Kitsune"
+            },
+            {
+                "count": "1",
+                "name": "Rend Flesh"
+            },
+            {
+                "count": "1",
+                "name": "Sift Through Sands"
+            },
+            {
+                "count": "1",
+                "name": "Wandering Ones"
+            },
+            {
+                "count": "1",
+                "name": "Akki Rockspeaker"
+            },
+            {
+                "count": "1",
+                "name": "Devouring Rage"
+            },
+            {
+                "count": "1",
+                "name": "Nine-Ringed Bo"
+            },
+            {
+                "count": "1",
+                "name": "Quiet Purity"
+            },
+            {
+                "count": "1",
+                "name": "Scuttling Death"
+            },
+            {
+                "count": "1",
+                "name": "Terashi's Cry"
+            },
+            {
+                "count": "1",
+                "name": "Phantom Wings"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11335-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Mana Crypt"
+            },
+            {
+                "count": "1",
+                "name": "Boseiju, Who Shelters All"
+            },
+            {
+                "count": "3",
+                "name": "Gifts Ungiven"
+            },
+            {
+                "count": "1",
+                "name": "Darksteel Colossus"
+            },
+            {
+                "count": "3",
+                "name": "Thirst for Knowledge"
+            },
+            {
+                "count": "1",
+                "name": "Goblin Charbelcher"
+            },
+            {
+                "count": "2",
+                "name": "Polluted Delta"
+            },
+            {
+                "count": "2",
+                "name": "Flooded Strand"
+            },
+            {
+                "count": "1",
+                "name": "Burning Wish"
+            },
+            {
+                "count": "2",
+                "name": "Island"
+            },
+            {
+                "count": "1",
+                "name": "Recoup"
+            },
+            {
+                "count": "1",
+                "name": "Skeletal Scrying"
+            },
+            {
+                "count": "3",
+                "name": "Duress"
+            },
+            {
+                "count": "4",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "1",
+                "name": "Mystical Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Tinker"
+            },
+            {
+                "count": "1",
+                "name": "Tolarian Academy"
+            },
+            {
+                "count": "1",
+                "name": "Yawgmoth's Will"
+            },
+            {
+                "count": "1",
+                "name": "Mana Severance"
+            },
+            {
+                "count": "3",
+                "name": "Phyrexian Furnace"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "2",
+                "name": "Snow-Covered Island"
+            },
+            {
+                "count": "4",
+                "name": "Mana Drain"
+            },
+            {
+                "count": "1",
+                "name": "Mox Pearl"
+            },
+            {
+                "count": "1",
+                "name": "Sol Ring"
+            },
+            {
+                "count": "1",
+                "name": "Black Lotus"
+            },
+            {
+                "count": "1",
+                "name": "Time Walk"
+            },
+            {
+                "count": "1",
+                "name": "Mox Sapphire"
+            },
+            {
+                "count": "1",
+                "name": "Mox Jet"
+            },
+            {
+                "count": "1",
+                "name": "Demonic Tutor"
+            },
+            {
+                "count": "4",
+                "name": "Underground Sea"
+            },
+            {
+                "count": "1",
+                "name": "Mox Ruby"
+            },
+            {
+                "count": "1",
+                "name": "Mox Emerald"
+            },
+            {
+                "count": "1",
+                "name": "Ancestral Recall"
+            },
+            {
+                "count": "3",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "3",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "1",
+                "name": "Boseiju, Who Shelters All"
+            },
+            {
+                "count": "1",
+                "name": "Cranial Extraction"
+            },
+            {
+                "count": "1",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "1",
+                "name": "Chainer's Edict"
+            },
+            {
+                "count": "1",
+                "name": "Coffin Purge"
+            },
+            {
+                "count": "1",
+                "name": "Duress"
+            },
+            {
+                "count": "1",
+                "name": "Pyroclasm"
+            },
+            {
+                "count": "1",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Gorilla Shaman"
+            },
+            {
+                "count": "1",
+                "name": "Primitive Justice"
+            },
+            {
+                "count": "1",
+                "name": "Pyroblast"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Mind Twist"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "3",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "1",
+                "name": "Boseiju, Who Shelters All"
+            },
+            {
+                "count": "1",
+                "name": "Cranial Extraction"
+            },
+            {
+                "count": "1",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "1",
+                "name": "Chainer's Edict"
+            },
+            {
+                "count": "1",
+                "name": "Coffin Purge"
+            },
+            {
+                "count": "1",
+                "name": "Duress"
+            },
+            {
+                "count": "1",
+                "name": "Pyroclasm"
+            },
+            {
+                "count": "1",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Gorilla Shaman"
+            },
+            {
+                "count": "1",
+                "name": "Primitive Justice"
+            },
+            {
+                "count": "1",
+                "name": "Pyroblast"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Mind Twist"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11341-MODO.txt",
+        "main": [
+            {
+                "count": "3",
+                "name": "Brain Freeze"
+            },
+            {
+                "count": "3",
+                "name": "Flooded Strand"
+            },
+            {
+                "count": "2",
+                "name": "Polluted Delta"
+            },
+            {
+                "count": "4",
+                "name": "Cunning Wish"
+            },
+            {
+                "count": "11",
+                "name": "Island"
+            },
+            {
+                "count": "4",
+                "name": "Accumulated Knowledge"
+            },
+            {
+                "count": "4",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "3",
+                "name": "Mystical Tutor"
+            },
+            {
+                "count": "3",
+                "name": "Turnabout"
+            },
+            {
+                "count": "4",
+                "name": "Meditate"
+            },
+            {
+                "count": "4",
+                "name": "Impulse"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "3",
+                "name": "Thawing Glaciers"
+            },
+            {
+                "count": "4",
+                "name": "High Tide"
+            },
+            {
+                "count": "4",
+                "name": "Reset"
+            },
+            {
+                "count": "4",
+                "name": "Reset"
+            },
+            {
+                "count": "1",
+                "name": "Brain Freeze"
+            },
+            {
+                "count": "1",
+                "name": "Stifle"
+            },
+            {
+                "count": "1",
+                "name": "Chain of Vapor"
+            },
+            {
+                "count": "1",
+                "name": "Flash of Insight"
+            },
+            {
+                "count": "1",
+                "name": "Words of Wisdom"
+            },
+            {
+                "count": "1",
+                "name": "Counterspell"
+            },
+            {
+                "count": "1",
+                "name": "Fact or Fiction"
+            },
+            {
+                "count": "1",
+                "name": "Misdirection"
+            },
+            {
+                "count": "1",
+                "name": "Mystical Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Rebuild"
+            },
+            {
+                "count": "1",
+                "name": "Annul"
+            },
+            {
+                "count": "1",
+                "name": "Stroke of Genius"
+            },
+            {
+                "count": "1",
+                "name": "Forbid"
+            },
+            {
+                "count": "1",
+                "name": "Hurkyl's Recall"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "4",
+                "name": "Reset"
+            },
+            {
+                "count": "1",
+                "name": "Brain Freeze"
+            },
+            {
+                "count": "1",
+                "name": "Stifle"
+            },
+            {
+                "count": "1",
+                "name": "Chain of Vapor"
+            },
+            {
+                "count": "1",
+                "name": "Flash of Insight"
+            },
+            {
+                "count": "1",
+                "name": "Words of Wisdom"
+            },
+            {
+                "count": "1",
+                "name": "Counterspell"
+            },
+            {
+                "count": "1",
+                "name": "Fact or Fiction"
+            },
+            {
+                "count": "1",
+                "name": "Misdirection"
+            },
+            {
+                "count": "1",
+                "name": "Mystical Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Rebuild"
+            },
+            {
+                "count": "1",
+                "name": "Annul"
+            },
+            {
+                "count": "1",
+                "name": "Stroke of Genius"
+            },
+            {
+                "count": "1",
+                "name": "Forbid"
+            },
+            {
+                "count": "1",
+                "name": "Hurkyl's Recall"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11343-MODO.txt",
+        "main": [
+            {
+                "count": "4",
+                "name": "Samurai of the Pale Curtain"
+            },
+            {
+                "count": "4",
+                "name": "Bonesplitter"
+            },
+            {
+                "count": "3",
+                "name": "Wing Shards"
+            },
+            {
+                "count": "1",
+                "name": "Silver Knight"
+            },
+            {
+                "count": "4",
+                "name": "Whipcorder"
+            },
+            {
+                "count": "17",
+                "name": "Plains"
+            },
+            {
+                "count": "3",
+                "name": "Disenchant"
+            },
+            {
+                "count": "4",
+                "name": "Longbow Archer"
+            },
+            {
+                "count": "4",
+                "name": "Exile"
+            },
+            {
+                "count": "4",
+                "name": "Mother of Runes"
+            },
+            {
+                "count": "2",
+                "name": "Soltari Visionary"
+            },
+            {
+                "count": "2",
+                "name": "Repentance"
+            },
+            {
+                "count": "3",
+                "name": "Quicksand"
+            },
+            {
+                "count": "1",
+                "name": "Kjeldoran Outpost"
+            },
+            {
+                "count": "2",
+                "name": "Eye for an Eye"
+            },
+            {
+                "count": "1",
+                "name": "White Knight"
+            },
+            {
+                "count": "1",
+                "name": "Righteousness"
+            },
+            {
+                "count": "1",
+                "name": "Righteousness"
+            },
+            {
+                "count": "3",
+                "name": "Circle of Protection: Red"
+            },
+            {
+                "count": "2",
+                "name": "Worship"
+            },
+            {
+                "count": "3",
+                "name": "Sheltering Prayers"
+            },
+            {
+                "count": "1",
+                "name": "Absolute Law"
+            },
+            {
+                "count": "3",
+                "name": "Knight of Dawn"
+            },
+            {
+                "count": "3",
+                "name": "Illumination"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "1",
+                "name": "Righteousness"
+            },
+            {
+                "count": "3",
+                "name": "Circle of Protection: Red"
+            },
+            {
+                "count": "2",
+                "name": "Worship"
+            },
+            {
+                "count": "3",
+                "name": "Sheltering Prayers"
+            },
+            {
+                "count": "1",
+                "name": "Absolute Law"
+            },
+            {
+                "count": "3",
+                "name": "Knight of Dawn"
+            },
+            {
+                "count": "3",
+                "name": "Illumination"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11344-MODO.txt",
+        "main": [
+            {
+                "count": "2",
+                "name": "Flooded Strand"
+            },
+            {
+                "count": "4",
+                "name": "Polluted Delta"
+            },
+            {
+                "count": "1",
+                "name": "Wonder"
+            },
+            {
+                "count": "4",
+                "name": "Aquamoeba"
+            },
+            {
+                "count": "4",
+                "name": "Basking Rootwalla"
+            },
+            {
+                "count": "4",
+                "name": "Arrogant Wurm"
+            },
+            {
+                "count": "4",
+                "name": "Circular Logic"
+            },
+            {
+                "count": "1",
+                "name": "Island"
+            },
+            {
+                "count": "4",
+                "name": "Wild Mongrel"
+            },
+            {
+                "count": "1",
+                "name": "Roar of the Wurm"
+            },
+            {
+                "count": "1",
+                "name": "Forest"
+            },
+            {
+                "count": "4",
+                "name": "Yavimaya Coast"
+            },
+            {
+                "count": "4",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "2",
+                "name": "Survival of the Fittest"
+            },
+            {
+                "count": "1",
+                "name": "Intuition"
+            },
+            {
+                "count": "1",
+                "name": "Lion's Eye Diamond"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "4",
+                "name": "Elvish Spirit Guide"
+            },
+            {
+                "count": "4",
+                "name": "Tropical Island"
+            },
+            {
+                "count": "4",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "4",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "3",
+                "name": "Ray of Revelation"
+            },
+            {
+                "count": "1",
+                "name": "Wonder"
+            },
+            {
+                "count": "1",
+                "name": "Roar of the Wurm"
+            },
+            {
+                "count": "1",
+                "name": "Masticore"
+            },
+            {
+                "count": "4",
+                "name": "Chill"
+            },
+            {
+                "count": "2",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "2",
+                "name": "Blue Elemental Blast"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "4",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "3",
+                "name": "Ray of Revelation"
+            },
+            {
+                "count": "1",
+                "name": "Wonder"
+            },
+            {
+                "count": "1",
+                "name": "Roar of the Wurm"
+            },
+            {
+                "count": "1",
+                "name": "Masticore"
+            },
+            {
+                "count": "4",
+                "name": "Chill"
+            },
+            {
+                "count": "2",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "2",
+                "name": "Blue Elemental Blast"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11433-MODO.txt",
+        "main": [
+            {
+                "count": "2",
+                "name": "Ninja of the Deep Hours"
+            },
+            {
+                "count": "3",
+                "name": "Stifle"
+            },
+            {
+                "count": "4",
+                "name": "Flooded Strand"
+            },
+            {
+                "count": "3",
+                "name": "Mental Note"
+            },
+            {
+                "count": "4",
+                "name": "Nimble Mongoose"
+            },
+            {
+                "count": "3",
+                "name": "Werebear"
+            },
+            {
+                "count": "4",
+                "name": "Meddling Mage"
+            },
+            {
+                "count": "3",
+                "name": "Daze"
+            },
+            {
+                "count": "4",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "3",
+                "name": "Misdirection"
+            },
+            {
+                "count": "1",
+                "name": "Gush"
+            },
+            {
+                "count": "4",
+                "name": "Wasteland"
+            },
+            {
+                "count": "3",
+                "name": "Null Rod"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "1",
+                "name": "Strip Mine"
+            },
+            {
+                "count": "4",
+                "name": "Tundra"
+            },
+            {
+                "count": "1",
+                "name": "Regrowth"
+            },
+            {
+                "count": "4",
+                "name": "Tropical Island"
+            },
+            {
+                "count": "4",
+                "name": "Swords to Plowshares"
+            },
+            {
+                "count": "1",
+                "name": "Library of Alexandria"
+            },
+            {
+                "count": "1",
+                "name": "Library of Alexandria"
+            },
+            {
+                "count": "3",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "3",
+                "name": "Ray of Revelation"
+            },
+            {
+                "count": "3",
+                "name": "Ground Seal"
+            },
+            {
+                "count": "3",
+                "name": "Energy Flux"
+            },
+            {
+                "count": "3",
+                "name": "Chill"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "1",
+                "name": "Library of Alexandria"
+            },
+            {
+                "count": "3",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "3",
+                "name": "Ray of Revelation"
+            },
+            {
+                "count": "3",
+                "name": "Ground Seal"
+            },
+            {
+                "count": "3",
+                "name": "Energy Flux"
+            },
+            {
+                "count": "3",
+                "name": "Chill"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11445-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Mana Crypt"
+            },
+            {
+                "count": "4",
+                "name": "Gifts Ungiven"
+            },
+            {
+                "count": "1",
+                "name": "Darksteel Colossus"
+            },
+            {
+                "count": "1",
+                "name": "Goblin Charbelcher"
+            },
+            {
+                "count": "3",
+                "name": "Flooded Strand"
+            },
+            {
+                "count": "2",
+                "name": "Polluted Delta"
+            },
+            {
+                "count": "1",
+                "name": "Burning Wish"
+            },
+            {
+                "count": "1",
+                "name": "Island"
+            },
+            {
+                "count": "1",
+                "name": "Skeletal Scrying"
+            },
+            {
+                "count": "1",
+                "name": "Recoup"
+            },
+            {
+                "count": "3",
+                "name": "Duress"
+            },
+            {
+                "count": "1",
+                "name": "City of Brass"
+            },
+            {
+                "count": "1",
+                "name": "Fact or Fiction"
+            },
+            {
+                "count": "4",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "1",
+                "name": "Mystical Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Tinker"
+            },
+            {
+                "count": "1",
+                "name": "Yawgmoth's Will"
+            },
+            {
+                "count": "1",
+                "name": "Tolarian Academy"
+            },
+            {
+                "count": "1",
+                "name": "Mana Severance"
+            },
+            {
+                "count": "1",
+                "name": "Vampiric Tutor"
+            },
+            {
+                "count": "2",
+                "name": "Impulse"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "1",
+                "name": "Snow-Covered Island"
+            },
+            {
+                "count": "4",
+                "name": "Mana Drain"
+            },
+            {
+                "count": "1",
+                "name": "Ancestral Recall"
+            },
+            {
+                "count": "1",
+                "name": "Mox Sapphire"
+            },
+            {
+                "count": "3",
+                "name": "Underground Sea"
+            },
+            {
+                "count": "1",
+                "name": "Mox Jet"
+            },
+            {
+                "count": "1",
+                "name": "Mind Twist"
+            },
+            {
+                "count": "1",
+                "name": "Mana Vault"
+            },
+            {
+                "count": "1",
+                "name": "Time Walk"
+            },
+            {
+                "count": "1",
+                "name": "Mox Ruby"
+            },
+            {
+                "count": "3",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "1",
+                "name": "Mox Emerald"
+            },
+            {
+                "count": "1",
+                "name": "Sol Ring"
+            },
+            {
+                "count": "1",
+                "name": "Black Lotus"
+            },
+            {
+                "count": "1",
+                "name": "Tundra"
+            },
+            {
+                "count": "1",
+                "name": "Mox Pearl"
+            },
+            {
+                "count": "1",
+                "name": "Demonic Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Demonic Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Boseiju, Who Shelters All"
+            },
+            {
+                "count": "1",
+                "name": "Cranial Extraction"
+            },
+            {
+                "count": "1",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Trinisphere"
+            },
+            {
+                "count": "1",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "1",
+                "name": "Chainer's Edict"
+            },
+            {
+                "count": "1",
+                "name": "Coffin Purge"
+            },
+            {
+                "count": "1",
+                "name": "Duress"
+            },
+            {
+                "count": "1",
+                "name": "Tsabo's Web"
+            },
+            {
+                "count": "1",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Primitive Justice"
+            },
+            {
+                "count": "1",
+                "name": "Chains of Mephistopheles"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Balance"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "1",
+                "name": "Demonic Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Boseiju, Who Shelters All"
+            },
+            {
+                "count": "1",
+                "name": "Cranial Extraction"
+            },
+            {
+                "count": "1",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Trinisphere"
+            },
+            {
+                "count": "1",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "1",
+                "name": "Chainer's Edict"
+            },
+            {
+                "count": "1",
+                "name": "Coffin Purge"
+            },
+            {
+                "count": "1",
+                "name": "Duress"
+            },
+            {
+                "count": "1",
+                "name": "Tsabo's Web"
+            },
+            {
+                "count": "1",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Primitive Justice"
+            },
+            {
+                "count": "1",
+                "name": "Chains of Mephistopheles"
+            },
+            {
+                "count": "1",
+                "name": "Blue Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Red Elemental Blast"
+            },
+            {
+                "count": "1",
+                "name": "Balance"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11452-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Mana Crypt"
+            },
+            {
+                "count": "1",
+                "name": "Crucible of Worlds"
+            },
+            {
+                "count": "1",
+                "name": "Darksteel Citadel"
+            },
+            {
+                "count": "1",
+                "name": "Sundering Titan"
+            },
+            {
+                "count": "2",
+                "name": "Mindslaver"
+            },
+            {
+                "count": "1",
+                "name": "Platinum Angel"
+            },
+            {
+                "count": "4",
+                "name": "Thirst for Knowledge"
+            },
+            {
+                "count": "4",
+                "name": "Polluted Delta"
+            },
+            {
+                "count": "4",
+                "name": "Island"
+            },
+            {
+                "count": "4",
+                "name": "Accumulated Knowledge"
+            },
+            {
+                "count": "3",
+                "name": "Brainstorm"
+            },
+            {
+                "count": "1",
+                "name": "Tinker"
+            },
+            {
+                "count": "4",
+                "name": "Goblin Welder"
+            },
+            {
+                "count": "1",
+                "name": "Yawgmoth's Will"
+            },
+            {
+                "count": "3",
+                "name": "Intuition"
+            },
+            {
+                "count": "4",
+                "name": "Force of Will"
+            },
+            {
+                "count": "4",
+                "name": "Mana Drain"
+            },
+            {
+                "count": "1",
+                "name": "Strip Mine"
+            },
+            {
+                "count": "1",
+                "name": "Mox Ruby"
+            },
+            {
+                "count": "1",
+                "name": "Mox Emerald"
+            },
+            {
+                "count": "2",
+                "name": "Underground Sea"
+            },
+            {
+                "count": "1",
+                "name": "Demonic Tutor"
+            },
+            {
+                "count": "1",
+                "name": "Mox Pearl"
+            },
+            {
+                "count": "1",
+                "name": "Ancestral Recall"
+            },
+            {
+                "count": "4",
+                "name": "Volcanic Island"
+            },
+            {
+                "count": "1",
+                "name": "Sol Ring"
+            },
+            {
+                "count": "1",
+                "name": "Mox Sapphire"
+            },
+            {
+                "count": "1",
+                "name": "Mox Jet"
+            },
+            {
+                "count": "1",
+                "name": "Black Lotus"
+            },
+            {
+                "count": "1",
+                "name": "Time Walk"
+            },
+            {
+                "count": "1",
+                "name": "Time Walk"
+            },
+            {
+                "count": "2",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Sundering Titan"
+            },
+            {
+                "count": "3",
+                "name": "Chalice of the Void"
+            },
+            {
+                "count": "1",
+                "name": "Duplicant"
+            },
+            {
+                "count": "2",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "2",
+                "name": "Duress"
+            },
+            {
+                "count": "2",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Shattering Pulse"
+            },
+            {
+                "count": "1",
+                "name": "Triskelion"
+            }
+        ],
+        "sideboard": [
+            {
+                "count": "1",
+                "name": "Time Walk"
+            },
+            {
+                "count": "2",
+                "name": "Engineered Explosives"
+            },
+            {
+                "count": "1",
+                "name": "Sundering Titan"
+            },
+            {
+                "count": "3",
+                "name": "Chalice of the Void"
+            },
+            {
+                "count": "1",
+                "name": "Duplicant"
+            },
+            {
+                "count": "2",
+                "name": "Lava Dart"
+            },
+            {
+                "count": "2",
+                "name": "Duress"
+            },
+            {
+                "count": "2",
+                "name": "Rack and Ruin"
+            },
+            {
+                "count": "1",
+                "name": "Shattering Pulse"
+            },
+            {
+                "count": "1",
+                "name": "Triskelion"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11469-MODO.txt",
+        "main": [
+            {
+                "count": "1",
+                "name": "Child of Thorns"
+            },
+            {
+                "count": "1",
+                "name": "Matsu-Tribe Sniper"
+            },
+            {
+                "count": "1",
+                "name": "Genju of the Cedars"
+            },
+            {
+                "count": "1",
+                "name": "Sakura-Tribe Springcaller"
+            },
+            {
+                "count": "1",
+                "name": "Gnarled Mass"
+            },
+            {
+                "count": "1",
+                "name": "Sosuke's Summons"
+            },
+            {
+                "count": "1",
+                "name": "Sakura-Tribe Elder"
+            },
+            {
+                "count": "1",
+                "name": "Honden of Seeing Winds"
+            },
+            {
+                "count": "1",
+                "name": "Orbweaver Kumo"
+            },
+            {
+                "count": "1",
+                "name": "Orochi Leafcaller"
+            },
+            {
+                "count": "1",
+                "name": "Sosuke, Son of Seshiro"
+            },
+            {
+                "count": "1",
+                "name": "Seshiro the Anointed"
+            },
+            {
+                "count": "1",
+                "name": "Glacial Ray"
+            },
+            {
+                "count": "2",
+                "name": "Humble Budoka"
+            },
+            {
+                "count": "1",
+                "name": "Order of the Sacred Bell"
+            },
+            {
+                "count": "2",
+                "name": "Sachi, Daughter of Seshiro"
+            },
+            {
+                "count": "1",
+                "name": "Commune with Nature"
+            },
+            {
+                "count": "1",
+                "name": "Matsu-Tribe Decoy"
+            },
+            {
+                "count": "2",
+                "name": "Orochi Eggwatcher"
+            },
+            {
+                "count": "1",
+                "name": "Serpent Skin"
+            },
+            {
+                "count": "3",
+                "name": "Mountain"
+            },
+            {
+                "count": "3",
+                "name": "Island"
+            },
+            {
+                "count": "11",
+                "name": "Forest"
+            }
+        ]
+    },
+    {
+        "url": "https://old.starcitygames.com/assets/deck-files/11471-MODO.txt",
+        "main": [
+            {
+                "count": "2",
+                "name": "Bile Urchin"
+            },
+            {
+                "count": "2",
+                "name": "Okiba-Gang Shinobi"
+            },
+            {
+                "count": "1",
+                "name": "Mistblade Shinobi"
+            },
+            {
+                "count": "1",
+                "name": "Ogre Marauder"
+            },
+            {
+                "count": "1",
+                "name": "Toshiro Umezawa"
+            },
+            {
+                "count": "1",
+                "name": "Cruel Deceiver"
+            },
+            {
+                "count": "1",
+                "name": "Kami of Old Stone"
+            },
+            {
+                "count": "1",
+                "name": "Mystic Restraints"
+            },
+            {
+                "count": "1",
+                "name": "Soratami Rainshaper"
+            },
+            {
+                "count": "1",
+                "name": "Sensei's Divining Top"
+            },
+            {
+                "count": "1",
+                "name": "Distress"
+            },
+            {
+                "count": "1",
+                "name": "Kami of the Painted Road"
+            },
+            {
+                "count": "1",
+                "name": "Rend Flesh"
+            },
+            {
+                "count": "1",
+                "name": "Soratami Savant"
+            },
+            {
+                "count": "1",
+                "name": "Callous Deceiver"
+            },
+            {
+                "count": "1",
+                "name": "Hideous Laughter"
+            },
+            {
+                "count": "1",
+                "name": "Mothrider Samurai"
+            },
+            {
+                "count": "1",
+                "name": "Rend Spirit"
+            },
+            {
+                "count": "1",
+                "name": "Villainous Ogre"
+            },
+            {
+                "count": "7",
+                "name": "Island"
+            },
+            {
+                "count": "8",
+                "name": "Swamp"
+            },
+            {
+                "count": "3",
+                "name": "Plains"
+            },
+            {
+                "count": "1",
+                "name": "Phantom Wings"
+            }
+        ]
+    }
+]
