@@ -126,7 +126,8 @@ def results():
         for card in results:
             cards.append({
                 'name': card['name'],
-                'image_url': card['image_url']})
+                'image_url': card['image_url']
+            })
 
     return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
 
