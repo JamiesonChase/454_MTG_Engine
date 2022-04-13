@@ -174,101 +174,9 @@
             {
                 "count": "2",
                 "name": "Befoul"
-            },
-            {
-                "count": "2",
-                "name": "Befoul"
-            },
-            {
-                "count": "1",
-                "name": "Call for Blood"
-            },
-            {
-                "count": "1",
-                "name": "Goblin Cohort"
-            },
-            {
-                "count": "1",
-                "name": "Mending Hands"
-            },
-            {
-                "count": "1",
-                "name": "Shimmering Glasskite"
-            },
-            {
-                "count": "1",
-                "name": "Hokori, Dust Drinker"
-            },
-            {
-                "count": "1",
-                "name": "Orb of Dreams"
-            },
-            {
-                "count": "1",
-                "name": "Vital Surge"
-            },
-            {
-                "count": "1",
-                "name": "Stir the Grave"
-            },
-            {
-                "count": "1",
-                "name": "Soratami Seer"
-            },
-            {
-                "count": "2",
-                "name": "Counsel of the Soratami"
-            },
-            {
-                "count": "1",
-                "name": "The Unspeakable"
-            },
-            {
-                "count": "1",
-                "name": "Lifted by Clouds"
-            },
-            {
-                "count": "1",
-                "name": "Rag Dealer"
-            },
-            {
-                "count": "1",
-                "name": "Waterveil Cavern"
-            },
-            {
-                "count": "1",
-                "name": "Deathcurse Ogre"
-            },
-            {
-                "count": "1",
-                "name": "Sokenzan Bruiser"
-            },
-            {
-                "count": "1",
-                "name": "Student of Elements"
-            },
-            {
-                "count": "1",
-                "name": "Akki Rockspeaker"
-            },
-            {
-                "count": "1",
-                "name": "Burr Grafter"
-            },
-            {
-                "count": "1",
-                "name": "Kami of the Waning Moon"
-            },
-            {
-                "count": "1",
-                "name": "Stone Rain"
             }
         ],
         "sideboard": [
-            {
-                "count": "2",
-                "name": "Befoul"
-            },
             {
                 "count": "1",
                 "name": "Call for Blood"
@@ -445,105 +353,9 @@
             {
                 "count": "8",
                 "name": "Plains"
-            },
-            {
-                "count": "8",
-                "name": "Plains"
-            },
-            {
-                "count": "2",
-                "name": "Harbinger of Spring"
-            },
-            {
-                "count": "1",
-                "name": "Mending Hands"
-            },
-            {
-                "count": "1",
-                "name": "Scaled Hulk"
-            },
-            {
-                "count": "1",
-                "name": "Kitsune Palliator"
-            },
-            {
-                "count": "1",
-                "name": "Traproot Kami"
-            },
-            {
-                "count": "1",
-                "name": "Hisoka's Defiance"
-            },
-            {
-                "count": "1",
-                "name": "Orochi Leafcaller"
-            },
-            {
-                "count": "1",
-                "name": "Reach Through Mists"
-            },
-            {
-                "count": "1",
-                "name": "Thoughtbind"
-            },
-            {
-                "count": "1",
-                "name": "Hair-Strung Koto"
-            },
-            {
-                "count": "1",
-                "name": "Kitsune Riftwalker"
-            },
-            {
-                "count": "1",
-                "name": "Pious Kitsune"
-            },
-            {
-                "count": "1",
-                "name": "Rend Flesh"
-            },
-            {
-                "count": "1",
-                "name": "Sift Through Sands"
-            },
-            {
-                "count": "1",
-                "name": "Wandering Ones"
-            },
-            {
-                "count": "1",
-                "name": "Akki Rockspeaker"
-            },
-            {
-                "count": "1",
-                "name": "Devouring Rage"
-            },
-            {
-                "count": "1",
-                "name": "Nine-Ringed Bo"
-            },
-            {
-                "count": "1",
-                "name": "Quiet Purity"
-            },
-            {
-                "count": "1",
-                "name": "Scuttling Death"
-            },
-            {
-                "count": "1",
-                "name": "Terashi's Cry"
-            },
-            {
-                "count": "1",
-                "name": "Phantom Wings"
             }
         ],
         "sideboard": [
-            {
-                "count": "8",
-                "name": "Plains"
-            },
             {
                 "count": "2",
                 "name": "Harbinger of Spring"
@@ -776,77 +588,9 @@
             {
                 "count": "3",
                 "name": "Volcanic Island"
-            },
-            {
-                "count": "3",
-                "name": "Volcanic Island"
-            },
-            {
-                "count": "1",
-                "name": "Boseiju, Who Shelters All"
-            },
-            {
-                "count": "1",
-                "name": "Cranial Extraction"
-            },
-            {
-                "count": "1",
-                "name": "Engineered Explosives"
-            },
-            {
-                "count": "1",
-                "name": "Lava Dart"
-            },
-            {
-                "count": "1",
-                "name": "Chainer's Edict"
-            },
-            {
-                "count": "1",
-                "name": "Coffin Purge"
-            },
-            {
-                "count": "1",
-                "name": "Duress"
-            },
-            {
-                "count": "1",
-                "name": "Pyroclasm"
-            },
-            {
-                "count": "1",
-                "name": "Rack and Ruin"
-            },
-            {
-                "count": "1",
-                "name": "Gorilla Shaman"
-            },
-            {
-                "count": "1",
-                "name": "Primitive Justice"
-            },
-            {
-                "count": "1",
-                "name": "Pyroblast"
-            },
-            {
-                "count": "1",
-                "name": "Blue Elemental Blast"
-            },
-            {
-                "count": "1",
-                "name": "Red Elemental Blast"
-            },
-            {
-                "count": "1",
-                "name": "Mind Twist"
             }
         ],
         "sideboard": [
-            {
-                "count": "3",
-                "name": "Volcanic Island"
-            },
             {
                 "count": "1",
                 "name": "Boseiju, Who Shelters All"
@@ -971,77 +715,9 @@
             {
                 "count": "4",
                 "name": "Reset"
-            },
-            {
-                "count": "4",
-                "name": "Reset"
-            },
-            {
-                "count": "1",
-                "name": "Brain Freeze"
-            },
-            {
-                "count": "1",
-                "name": "Stifle"
-            },
-            {
-                "count": "1",
-                "name": "Chain of Vapor"
-            },
-            {
-                "count": "1",
-                "name": "Flash of Insight"
-            },
-            {
-                "count": "1",
-                "name": "Words of Wisdom"
-            },
-            {
-                "count": "1",
-                "name": "Counterspell"
-            },
-            {
-                "count": "1",
-                "name": "Fact or Fiction"
-            },
-            {
-                "count": "1",
-                "name": "Misdirection"
-            },
-            {
-                "count": "1",
-                "name": "Mystical Tutor"
-            },
-            {
-                "count": "1",
-                "name": "Rebuild"
-            },
-            {
-                "count": "1",
-                "name": "Annul"
-            },
-            {
-                "count": "1",
-                "name": "Stroke of Genius"
-            },
-            {
-                "count": "1",
-                "name": "Forbid"
-            },
-            {
-                "count": "1",
-                "name": "Hurkyl's Recall"
-            },
-            {
-                "count": "1",
-                "name": "Blue Elemental Blast"
             }
         ],
         "sideboard": [
-            {
-                "count": "4",
-                "name": "Reset"
-            },
             {
                 "count": "1",
                 "name": "Brain Freeze"
@@ -1174,41 +850,9 @@
             {
                 "count": "1",
                 "name": "Righteousness"
-            },
-            {
-                "count": "1",
-                "name": "Righteousness"
-            },
-            {
-                "count": "3",
-                "name": "Circle of Protection: Red"
-            },
-            {
-                "count": "2",
-                "name": "Worship"
-            },
-            {
-                "count": "3",
-                "name": "Sheltering Prayers"
-            },
-            {
-                "count": "1",
-                "name": "Absolute Law"
-            },
-            {
-                "count": "3",
-                "name": "Knight of Dawn"
-            },
-            {
-                "count": "3",
-                "name": "Illumination"
             }
         ],
         "sideboard": [
-            {
-                "count": "1",
-                "name": "Righteousness"
-            },
             {
                 "count": "3",
                 "name": "Circle of Protection: Red"
@@ -1317,45 +961,9 @@
             {
                 "count": "4",
                 "name": "Volcanic Island"
-            },
-            {
-                "count": "4",
-                "name": "Volcanic Island"
-            },
-            {
-                "count": "3",
-                "name": "Ray of Revelation"
-            },
-            {
-                "count": "1",
-                "name": "Wonder"
-            },
-            {
-                "count": "1",
-                "name": "Roar of the Wurm"
-            },
-            {
-                "count": "1",
-                "name": "Masticore"
-            },
-            {
-                "count": "4",
-                "name": "Chill"
-            },
-            {
-                "count": "2",
-                "name": "Red Elemental Blast"
-            },
-            {
-                "count": "2",
-                "name": "Blue Elemental Blast"
             }
         ],
         "sideboard": [
-            {
-                "count": "4",
-                "name": "Volcanic Island"
-            },
             {
                 "count": "3",
                 "name": "Ray of Revelation"
@@ -1468,37 +1076,9 @@
             {
                 "count": "1",
                 "name": "Library of Alexandria"
-            },
-            {
-                "count": "1",
-                "name": "Library of Alexandria"
-            },
-            {
-                "count": "3",
-                "name": "Engineered Explosives"
-            },
-            {
-                "count": "3",
-                "name": "Ray of Revelation"
-            },
-            {
-                "count": "3",
-                "name": "Ground Seal"
-            },
-            {
-                "count": "3",
-                "name": "Energy Flux"
-            },
-            {
-                "count": "3",
-                "name": "Chill"
             }
         ],
         "sideboard": [
-            {
-                "count": "1",
-                "name": "Library of Alexandria"
-            },
             {
                 "count": "3",
                 "name": "Engineered Explosives"
@@ -1679,77 +1259,9 @@
             {
                 "count": "1",
                 "name": "Demonic Tutor"
-            },
-            {
-                "count": "1",
-                "name": "Demonic Tutor"
-            },
-            {
-                "count": "1",
-                "name": "Boseiju, Who Shelters All"
-            },
-            {
-                "count": "1",
-                "name": "Cranial Extraction"
-            },
-            {
-                "count": "1",
-                "name": "Engineered Explosives"
-            },
-            {
-                "count": "1",
-                "name": "Trinisphere"
-            },
-            {
-                "count": "1",
-                "name": "Lava Dart"
-            },
-            {
-                "count": "1",
-                "name": "Chainer's Edict"
-            },
-            {
-                "count": "1",
-                "name": "Coffin Purge"
-            },
-            {
-                "count": "1",
-                "name": "Duress"
-            },
-            {
-                "count": "1",
-                "name": "Tsabo's Web"
-            },
-            {
-                "count": "1",
-                "name": "Rack and Ruin"
-            },
-            {
-                "count": "1",
-                "name": "Primitive Justice"
-            },
-            {
-                "count": "1",
-                "name": "Chains of Mephistopheles"
-            },
-            {
-                "count": "1",
-                "name": "Blue Elemental Blast"
-            },
-            {
-                "count": "1",
-                "name": "Red Elemental Blast"
-            },
-            {
-                "count": "1",
-                "name": "Balance"
             }
         ],
         "sideboard": [
-            {
-                "count": "1",
-                "name": "Demonic Tutor"
-            },
             {
                 "count": "1",
                 "name": "Boseiju, Who Shelters All"
@@ -1934,53 +1446,9 @@
             {
                 "count": "1",
                 "name": "Time Walk"
-            },
-            {
-                "count": "1",
-                "name": "Time Walk"
-            },
-            {
-                "count": "2",
-                "name": "Engineered Explosives"
-            },
-            {
-                "count": "1",
-                "name": "Sundering Titan"
-            },
-            {
-                "count": "3",
-                "name": "Chalice of the Void"
-            },
-            {
-                "count": "1",
-                "name": "Duplicant"
-            },
-            {
-                "count": "2",
-                "name": "Lava Dart"
-            },
-            {
-                "count": "2",
-                "name": "Duress"
-            },
-            {
-                "count": "2",
-                "name": "Rack and Ruin"
-            },
-            {
-                "count": "1",
-                "name": "Shattering Pulse"
-            },
-            {
-                "count": "1",
-                "name": "Triskelion"
             }
         ],
         "sideboard": [
-            {
-                "count": "1",
-                "name": "Time Walk"
-            },
             {
                 "count": "2",
                 "name": "Engineered Explosives"

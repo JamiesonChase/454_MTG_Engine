@@ -28,11 +28,11 @@ def main():
                         parts = line.split()
                         cnt = parts[0]
                         name = ' '.join(parts[1:])
-
-                    card = { "count": cnt, "name": name }
-                    main.append(card)
-                    if reading_sideboard:
-                        sideboard.append(card)
+                        card = { "count": cnt, "name": name }
+                        if reading_sideboard:
+                            sideboard.append(card)
+                        else:
+                            main.append(card)
 
                 deck['main'] = main
                 if reading_sideboard:
