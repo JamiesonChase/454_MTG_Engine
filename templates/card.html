@@ -3,8 +3,19 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static',filename='templates.css') }}" media="all" />
     <meta charset="UTF-8">
+    <style>
+      a:link {
+        float: right;
+        margin-right: 10px;
+        color: #897d9c;
+        text-decoration: none;
+      }
+    </style>
 </head>
 <body>
+  <a href="{{ url_for('logout') }}">Logout</a>
+  <a href="{{ url_for('decks') }}">Decks</a>
+  <br />
   <div class="card-profile">
   <div class="inner-flex ">
     <div class="card-image">
@@ -48,7 +59,7 @@
               </div>
             </a>
           </div>
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@
     />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <title>Magic The Gathering</title>
 
     <style>
@@ -19,7 +20,7 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        background-image: url({{url_for("static", filename= "265693.png")}});
+        background-image: url({{ url_for("static", filename= "265693.png") }});
         background-size: cover;
       }
 
@@ -84,7 +85,9 @@
     </style>
   </head>
   <body>
-    <a href="{{url_for('logout')}}">Logout</a><br />
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('decks') }}">Decks</a>
+    <br />
     <div>
       <img
         src="https://www.logolynx.com/images/logolynx/49/49548804a29784a2ab1361b0f499f264.png"
