@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static',filename='templates.css') }}" media="all" />
     <meta charset="UTF-8">
+    <title>{{ card.name }}</title>
     <style>
       a:link {
         float: right;
@@ -20,19 +21,19 @@
   <div class="inner-flex ">
     <div class="card-image">
       <div class="card-image-front">
-        <img class="card c15 border-black " src="{{ card[0].image_url }}" />
+        <img class="card c15 border-black " src="{{ card.image_url }}" />
       </div>
     </div>
     <div class="card-text">
         <h1 class="card-text-title" lang="en">
-          <span class="card-text-card-name">{{ card[0].name }}</span>
+          <span class="card-text-card-name">{{ card.name }}</span>
         </h1>
-      <p class="card-text-type-line">{{ card[0].types }}</p>
+      <p class="card-text-type-line">{{ card.types }}</p>
       <div class="card-text-oracle">
-        <p>{{ card[0].desc }}</p>
+        <p>{{ card.desc }}</p>
       </div>
       <div class="card-text-flavor">
-      <p>{{ card[0].flavor }}</p>
+      <p>{{ card.flavor }}</p>
       </div>
 
     </div>

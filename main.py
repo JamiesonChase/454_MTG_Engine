@@ -84,28 +84,21 @@ def home():
 
     return render_template('home.html') #renders main homepage
 
+# individual card page, shows all stats for 1 card
 @app.route('/card/<card_name>')
 @login_required
 def card_page(card_name):
-    Search = card_name # getting the text from the query
-    cards = []
+    search = card_name # getting the text from the query
+    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(search)
 
-    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(Search)
-
+    card = {}
     with ix.searcher() as s:
-        results = s.search_page(q, 1, pagelen=1)
+        results = s.search(q, limit=1)
         for result in results:
-            cards.append({
-                'name': result['name'],
-                'image_url': result['image_url'],
-                'desc': result['desc'],
-                'flavor':result['flavor'],
-                'url': result['url'],
-                'types': result['types'],
-                'cost': '3'
-            })
-            print(cards)
-    return render_template('card.html',card=cards)
+            card = dict(result)
+            break
+
+    return render_template('card.html',card=card)
 
 # results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
@@ -116,10 +109,10 @@ def results():
         if len(q) > 0:
             return redirect(url_for('results',q=q))
 
-    Search = request.args['q'] # getting the text from the query
+    search = request.args['q'] # getting the text from the query
     cards = []
 
-    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(Search)
+    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(search)
 
     with ix.searcher() as s:
         results = s.search_page(q, 1, pagelen=12)
@@ -129,7 +122,7 @@ def results():
                 'image_url': card['image_url']
             })
 
-    return render_template('results.html', msg=Search, card=cards) #renders results page, passing cards and query.
+    return render_template('results.html', msg=search, card=cards) #renders results page, passing cards and query.
 
 
 # decks page, shows list of pre-made and custom decks
