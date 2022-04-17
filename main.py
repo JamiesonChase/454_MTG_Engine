@@ -1,19 +1,17 @@
 # standard library imports
 import asyncio
-import json # TEMP: remove when moving populateDB to module
 
 from flask import Flask, url_for, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 from flask_bcrypt import Bcrypt
 from whoosh.qparser import MultifieldParser
-from flask_sqlalchemy import inspect  # TEMP: remove when moving populateDB to module
 
 # internal app imports
-from config import db_key, app_key, deck_data # TEMP: remove deck_data when moving populateDB to module
+from config import db_key, app_key
 from models import db, User, Deck, Card, DeckCards
 from forms import LoginForm, RegisterForm
 from whoosh_index import indexData
-# from sqlite_functions import populateDB # TEMP: add when moving populateDB to module
+from sqlite_functions import populateDB
  
 
 # configure the main app
@@ -141,54 +139,9 @@ def decks():
     return render_template('decks.html')
 
 
-async def populateDB():
-    rows = len(Deck.query.all()) + len(Card.query.all())
-    if rows > 0:
-        return
-
-    with open(deck_data, 'r') as f:
-        data = json.load(f)
-
-    decks = []
-    cards = []
-    cards_by_deck = {}
-
-    for deck in data:
-        deck_name = deck['url']   # need to assign a name somehow to these pre-made decks
-        decks.append(Deck(name=deck_name))
-        cards_in_deck = []
-        for card in deck['main']:
-            card['sideboard'] = False
-            if card['name'] not in cards:
-                cards.append(Card(name=card['name']))
-            cards_in_deck.append(card)
-        if 'sideboard' in deck:
-            for card in deck['sideboard']:
-                card['sideboard'] = True
-                if card['name'] not in cards:
-                    cards.append(Card(name=card['name']))
-                cards_in_deck.append(card)
-        cards_by_deck[deck_name] = cards_in_deck
-
-    db.session.add_all(decks)
-    db.session.add_all(cards)
-    db.session.commit()
-
-    deck_cards_to_add = []
-    for url, cards in cards_by_deck.items():
-        deck = Deck.query.filter_by(name=url).first()
-        for card_to_add in cards:
-            card = Card.query.filter_by(name=card_to_add['name']).first()
-            deck_card = DeckCards(deck_id=deck.id, card_id=card.id,
-                count=card_to_add['count'], sideboard=card_to_add['sideboard'])
-            deck_cards_to_add.append(deck_card)
-    
-    db.session.add_all(deck_cards_to_add)
-    db.session.commit()
-
 async def main():
     global ix
-    tasks = await asyncio.gather(indexData(), populateDB())
+    tasks = await asyncio.gather(indexData(), populateDB(db))
     ix = tasks[0]
     app.run(debug=True)
 
