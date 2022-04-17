@@ -19,7 +19,7 @@ class CardSchema(SchemaClass):
     types     = TEXT(stored=True)
 
 
-def indexData():
+async def indexData():
     schema = CardSchema()
 
     # ensure index directory exists
@@ -34,7 +34,7 @@ def indexData():
     ix = create_in(index_path, schema)
     writer = ix.writer()
 
-    with open(card_data) as f:
+    with open(card_data, 'r') as f:
         data = json.load(f)
 
     for card in data:
