@@ -97,7 +97,7 @@
     <a href="{{ url_for('logout') }}">Logout</a>
     <a href="{{ url_for('decks') }}">Decks</a>
     <a href="{{ url_for('home') }}">Home</a>
-    <br />
+    <!-- <br /> -->
     <div id="wrapper">
       <div class="d-flex justify-content-center h-100">
         <div class="search">
@@ -125,8 +125,8 @@
           {% for card in card %}
           <div class="card-grid-item">
             <a class="card-grid-item-card" href="{{ url_for('card_page',card_name=card.name) }}">
-              <span class="card-grid-item-invisible-label" aria-hidden="true"
-                >{{ card.name }}</span
+              <span class="card-grid-item-invisible-label" aria-hidden="true">
+                {{ card.name }}</span
               >
               <div class="card-grid-item-card-faces">
                 <div class="card-grid-item-card-front">

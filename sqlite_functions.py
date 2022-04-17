@@ -2,7 +2,7 @@ from flask_sqlalchemy import inspect
 import json
 
 from config import deck_data
-from models import db, User, Deck, Card, DeckCards
+from models import Deck, Card, DeckCards
 
 async def populateDB(db):
     rows = len(Deck.query.all()) + len(Card.query.all())

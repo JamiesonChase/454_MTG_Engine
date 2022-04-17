@@ -136,7 +136,13 @@ def card_page(card_name):
 @app.route('/decks', methods=('GET', 'POST'))
 @login_required
 def decks():
-
+    decks = (db.session
+        .query(Deck, Card, DeckCards)
+        .select_from(Deck)
+        .join(DeckCards, Deck.id==DeckCards.deck_id)
+        .join(Card, Card.id==DeckCards.card_id)
+        .all()
+    )
     return render_template('decks.html', decks=decks)
 
 
