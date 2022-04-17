@@ -136,13 +136,26 @@ def card_page(card_name):
 @app.route('/decks', methods=('GET', 'POST'))
 @login_required
 def decks():
-    decks = (db.session
-        .query(Deck, Card, DeckCards)
-        .select_from(Deck)
-        .join(DeckCards, Deck.id==DeckCards.deck_id)
-        .join(Card, Card.id==DeckCards.card_id)
-        .all()
-    )
+    decks = []
+    for deck_result in Deck.query.all():
+        deck = {}
+        deck['id'] = deck_result.id
+        deck['name'] = deck_result.name
+        cards_main = []
+        cards_sideboard = []
+        for data, card in db.session.query(DeckCards, Card).join(Card, DeckCards.card_id==Card.id).filter(DeckCards.deck_id==deck_result.id).all():
+            card_data = {
+                'id': card.id,
+                'name': card.name,
+                'count': data.count
+            }
+            if not data.sideboard:
+                cards_main.append(card_data)
+            else:
+                cards_sideboard.append(card_data)
+        deck['main'] = cards_main
+        deck['sideboard'] = cards_sideboard
+        decks.append(deck)
     return render_template('decks.html', decks=decks)
 
 

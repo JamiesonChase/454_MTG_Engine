@@ -6,12 +6,13 @@ def main():
         results = json.load(f)
 
     decks = []
-    for result in results:
+    for i, result in enumerate(results):
         deck = {}
         main = []
         sideboard = []
 
         for key, value in result.items():
+            deck['name'] = f'Starter Deck #{i+1}'
             reading_sideboard = False
             if key == 'url':
                 deck['url'] = value

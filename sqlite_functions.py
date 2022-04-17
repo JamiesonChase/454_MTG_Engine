@@ -17,7 +17,7 @@ async def populateDB(db):
     cards_by_deck = {}
 
     for deck in data:
-        deck_name = deck['url']   # need to assign a name somehow to these pre-made decks
+        deck_name = deck['name']   # need to assign a name somehow to these pre-made decks
         decks.append(Deck(name=deck_name))
         cards_in_deck = []
 
