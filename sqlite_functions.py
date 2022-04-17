@@ -20,17 +20,20 @@ async def populateDB(db):
         deck_name = deck['url']   # need to assign a name somehow to these pre-made decks
         decks.append(Deck(name=deck_name))
         cards_in_deck = []
+
         for card in deck['main']:
             card['sideboard'] = False
             if card['name'] not in cards:
                 cards.append(Card(name=card['name']))
             cards_in_deck.append(card)
+
         if 'sideboard' in deck:
             for card in deck['sideboard']:
                 card['sideboard'] = True
                 if card['name'] not in cards:
                     cards.append(Card(name=card['name']))
                 cards_in_deck.append(card)
+
         cards_by_deck[deck_name] = cards_in_deck
 
     db.session.add_all(decks)
@@ -40,6 +43,7 @@ async def populateDB(db):
     deck_cards_to_add = []
     for url, cards in cards_by_deck.items():
         deck = Deck.query.filter_by(name=url).first()
+        
         for card_to_add in cards:
             card = Card.query.filter_by(name=card_to_add['name']).first()
             deck_card = DeckCards(deck_id=deck.id, card_id=card.id,

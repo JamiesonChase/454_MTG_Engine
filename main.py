@@ -136,7 +136,8 @@ def card_page(card_name):
 @app.route('/decks', methods=('GET', 'POST'))
 @login_required
 def decks():
-    return render_template('decks.html')
+
+    return render_template('decks.html', decks=decks)
 
 
 async def main():
