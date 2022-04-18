@@ -13,7 +13,7 @@
       }
     </style>
 </head>
-<body>
+<body>∫
   <a href="{{ url_for('logout') }}">Logout</a>
   <a href="{{ url_for('decks') }}">Decks</a>
   <a href="{{ url_for('home') }}">Home</a>
@@ -41,16 +41,16 @@
   </div>
   </div>
 
-    <div class="card-profile">
-    <div class="inner-flex ">
-          <div class="card-grid">
-        <div class="card-grid-inner">
-          {% for i in range(4) %}
+  <div class="card-profile">
+  <div class="inner-flex ">
+    <div class="card-grid">
+      <div class="card-grid-inner">
+        {% for i in range(4) %}
           <div class="card-grid-item">
-            <a class="card-grid-item-card" href="">
-              <span class="card-grid-item-invisible-label" aria-hidden="true"
-                >{{ card.name }}</span
-              >
+            <a class="card-grid-item-card" href="{{ url_for('card_page', card_name=suggestions[i].name) }}">
+              <span class="card-grid-item-invisible-label" aria-hidden="true">
+                {{ suggestions[i].name }}
+              </span>
               <div class="card-grid-item-card-faces">
                 <div class="card-grid-item-card-front">
                   <img
@@ -61,10 +61,10 @@
               </div>
             </a>
           </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </div>
-    </div>
+  </div>
+  </div>
 </body>
 </html>

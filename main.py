@@ -4,7 +4,7 @@ import asyncio
 from flask import Flask, url_for, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 from flask_bcrypt import Bcrypt
-from whoosh.qparser import MultifieldParser
+from whoosh.qparser import QueryParser, MultifieldParser
 
 # internal app imports
 from config import db_key, app_key
@@ -112,24 +112,62 @@ def results():
                 'image_url': card['image_url']
             })
 
-    return render_template('results.html', msg=search, card=cards) #renders results page, passing cards and query.
+    return render_template('results.html', msg=search, cards=cards) #renders results page, passing cards and query.
 
 
-# individual card page, shows all stats for 1 card
+# individual card page, shows all stats for 1 card and suggestions for other cards
 @app.route('/card/<card_name>')
 @login_required
 def card_page(card_name):
-    search = card_name # getting the text from the query
-    q = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(search)
-
+    card_query = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(card_name)
     card = {}
+
     with ix.searcher() as s:
-        results = s.search(q, limit=1)
+        results = s.search(card_query, limit=1)
         for result in results:
             card = dict(result)
             break
 
-    return render_template('card.html',card=card)
+    suggestions = []
+
+    db_card = Card.query.filter(card_name==Card.name).first()
+    if db_card:
+        # print(f'{card_name} found in db, card.id = {db_card.id}, card.name = {db_card.name}')
+
+        decks_subq = (db.session
+            .query(Deck)
+            .join(DeckCards, Deck.id==DeckCards.deck_id)
+            .filter(DeckCards.card_id==db_card.id)
+            .subquery()
+        )
+        top_cards = (db.session
+            .query(Card)
+            .join(DeckCards, Card.id==DeckCards.card_id)
+            .filter(DeckCards.deck_id==decks_subq.c.id)
+            .filter(Card.id != db_card.id)
+            .order_by(DeckCards.count.desc())
+            .limit(5)   # get 1 extra in case current card gets filtered out
+        )
+
+        for top_card in top_cards:
+            query = QueryParser('name', schema=ix.schema).parse(top_card.name)
+            with ix.searcher() as s:
+                results = s.search(query, limit=10)
+                for result in results:
+                    if result['name'] == top_card.name:
+                        suggestions.append(result)
+                        break
+
+    else:
+        print(f'{card_name} not found in db')
+        # use option 2 for forming suggestions, see progress report
+
+    validSuggestions = len(suggestions)
+    if validSuggestions < 4:
+        for s in suggestions[validSuggestions:]:
+            s = {'name': 'haha'}
+
+    return render_template('card.html' ,card=card, suggestions=suggestions)
 
 
 # decks page, shows list of pre-made and custom decks
@@ -143,7 +181,15 @@ def decks():
         deck['name'] = deck_result.name
         cards_main = []
         cards_sideboard = []
-        for data, card in db.session.query(DeckCards, Card).join(Card, DeckCards.card_id==Card.id).filter(DeckCards.deck_id==deck_result.id).all():
+
+        deck_cards_results = (db.session
+            .query(DeckCards,Card)
+            .join(Card, DeckCards.card_id==Card.id)
+            .filter(DeckCards.deck_id==deck_result.id)
+            .all()
+        )
+
+        for data, card in deck_cards_results:
             card_data = {
                 'id': card.id,
                 'name': card.name,
@@ -153,9 +199,11 @@ def decks():
                 cards_main.append(card_data)
             else:
                 cards_sideboard.append(card_data)
+
         deck['main'] = cards_main
         deck['sideboard'] = cards_sideboard
         decks.append(deck)
+
     return render_template('decks.html', decks=decks)
 
 
