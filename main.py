@@ -213,6 +213,7 @@ def decks():
         deck['main'] = cards_main
         deck['sideboard'] = cards_sideboard
         decks.append(deck)
+        #break # temp!!!!!!!!
 
     return render_template('decks.html', decks=decks)
 

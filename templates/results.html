@@ -124,7 +124,10 @@
         <div class="card-grid-inner">
           {% for card in cards %}
           <div class="card-grid-item">
-            <a class="card-grid-item-card" href="{{ url_for('card_page', card_id=card.id) }}">
+            <a
+              class="card-grid-item-card"
+              href="{{ url_for('card_page', card_id=card.id) }}"
+            >
               <span class="card-grid-item-invisible-label" aria-hidden="true">
                 {{ card.name }}</span
               >
