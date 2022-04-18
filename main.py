@@ -119,6 +119,7 @@ def results():
 @app.route('/card/<card_name>')
 @login_required
 def card_page(card_name):
+    SUGGESTIONS_LIMIT = 4
     card_query = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(card_name)
     card = {}
 
@@ -146,7 +147,7 @@ def card_page(card_name):
             .filter(DeckCards.deck_id==decks_subq.c.id)
             .filter(Card.id != db_card.id)
             .order_by(DeckCards.count.desc())
-            .limit(5)   # get 1 extra in case current card gets filtered out
+            .limit(SUGGESTIONS_LIMIT + 1)   # get 1 extra in case current card gets filtered out
         )
 
         for top_card in top_cards:
@@ -158,14 +159,10 @@ def card_page(card_name):
                         suggestions.append(result)
                         break
 
-    else:
-        print(f'{card_name} not found in db')
-        # use option 2 for forming suggestions, see progress report
-
-    validSuggestions = len(suggestions)
-    if validSuggestions < 4:
-        for s in suggestions[validSuggestions:]:
-            s = {'name': 'haha'}
+    numSuggestions = len(suggestions)
+    if numSuggestions < SUGGESTIONS_LIMIT:
+        # use option 2 for matching suggestions, see progress report
+        pass
 
     return render_template('card.html' ,card=card, suggestions=suggestions)
 
