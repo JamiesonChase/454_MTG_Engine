@@ -171,6 +171,8 @@ def card_page(card_id):
         with ix.searcher() as s:
             results = s.search(query)
             for result in results:
+                if result['id'] == card_id:
+                    continue
                 suggestions.append(dict(result))
                 if len(suggestions) == SUGGESTIONS_LIMIT:
                     break
