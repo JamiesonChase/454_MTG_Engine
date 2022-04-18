@@ -4,7 +4,7 @@ import asyncio
 from flask import Flask, url_for, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 from flask_bcrypt import Bcrypt
-from whoosh.qparser import QueryParser, MultifieldParser
+from whoosh.qparser import QueryParser, MultifieldParser, OrGroup
 
 # internal app imports
 from config import db_key, app_key
@@ -106,13 +106,10 @@ def results():
 
     with ix.searcher() as s:
         results = s.search_page(q, 1, pagelen=12)
-        for card in results:
-            cards.append({
-                'name': card['name'],
-                'image_url': card['image_url']
-            })
+        for result in results:
+            cards.append(dict(result))
 
-    return render_template('results.html', msg=search, cards=cards) #renders results page, passing cards and query.
+    return render_template('results.html', msg=search, cards=cards)
 
 
 # individual card page, shows all stats for 1 card and suggestions for other cards
@@ -120,17 +117,18 @@ def results():
 @login_required
 def card_page(card_name):
     SUGGESTIONS_LIMIT = 4
-    card_query = MultifieldParser(['name', 'desc'], schema=ix.schema).parse(card_name)
     card = {}
+    suggestions = []
 
+    query = QueryParser('name', schema=ix.schema).parse(card_name)
     with ix.searcher() as s:
-        results = s.search(card_query, limit=1)
+        results = s.search(query, limit=1)
         for result in results:
             card = dict(result)
             break
 
-    suggestions = []
-
+    # find suggestions based on the most popular cards in decks that the
+    # current card appears in
     db_card = Card.query.filter(card_name==Card.name).first()
     if db_card:
         # print(f'{card_name} found in db, card.id = {db_card.id}, card.name = {db_card.name}')
@@ -153,7 +151,7 @@ def card_page(card_name):
         for top_card in top_cards:
             query = QueryParser('name', schema=ix.schema).parse(top_card.name)
             with ix.searcher() as s:
-                results = s.search(query, limit=10)
+                results = s.search(query, limit=10)   # try the 1st 10 cards, reduce if slow
                 for result in results:
                     if result['name'] == top_card.name:
                         suggestions.append(result)
@@ -161,8 +159,18 @@ def card_page(card_name):
 
     numSuggestions = len(suggestions)
     if numSuggestions < SUGGESTIONS_LIMIT:
-        # use option 2 for matching suggestions, see progress report
-        pass
+        # the card doesn't appear in any decks or not enough suggestions were found,
+        # find suggestions based on other card's that have a similar description
+        # to the current card, ranked using BM25
+
+        query = MultifieldParser(['desc', 'name'], schema=ix.schema,
+            group=OrGroup).parse(card['desc'])
+        with ix.searcher() as s:
+            results = s.search(query)
+            for result in results:
+                suggestions.append(dict(result))
+                if len(suggestions) == SUGGESTIONS_LIMIT:
+                    break
 
     return render_template('card.html' ,card=card, suggestions=suggestions)
 
