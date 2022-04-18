@@ -113,25 +113,28 @@ def results():
 
 
 # individual card page, shows all stats for 1 card and suggestions for other cards
-@app.route('/card/<card_name>')
+@app.route('/card/<card_id>')
 @login_required
-def card_page(card_name):
+def card_page(card_id):
     SUGGESTIONS_LIMIT = 4
     card = {}
     suggestions = []
 
-    query = QueryParser('name', schema=ix.schema).parse(card_name)
+    query = QueryParser('id', schema=ix.schema).parse(card_id)
     with ix.searcher() as s:
-        results = s.search(query, limit=1)
+        results = s.search(query)
         for result in results:
-            card = dict(result)
-            break
+            if result['id'] == card_id:
+                card = dict(result)
+                break
+        else:
+            return '<h1>404 Page Not Found</h1>'
 
-    # find suggestions based on the most popular cards in decks that the
-    # current card appears in
-    db_card = Card.query.filter(card_name==Card.name).first()
+    # find suggestions based on the most popular cards in decks that
+    # the current card appears in
+    db_card = Card.query.filter(card['name']==Card.name).first()
     if db_card:
-        # print(f'{card_name} found in db, card.id = {db_card.id}, card.name = {db_card.name}')
+        # print(f'card {card["id"]} found in db, card.id = {db_card.id}, card.name = {db_card.name}')
 
         decks_subq = (db.session
             .query(Deck)
@@ -172,7 +175,7 @@ def card_page(card_name):
                 if len(suggestions) == SUGGESTIONS_LIMIT:
                     break
 
-    return render_template('card.html' ,card=card, suggestions=suggestions)
+    return render_template('card.html', card=card, suggestions=suggestions)
 
 
 # decks page, shows list of pre-made and custom decks

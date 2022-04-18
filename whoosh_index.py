@@ -5,7 +5,7 @@ from whoosh.fields import SchemaClass, TEXT, ID
 from config import index_path, card_data
 
 class CardSchema(SchemaClass):
-    id        = ID
+    id        = ID(stored=True)
     name      = TEXT(stored=True)
     desc      = TEXT(stored=True)
     flavor    = TEXT(stored=True)
