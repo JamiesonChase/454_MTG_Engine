@@ -15,13 +15,12 @@
     ></script>
     <title>MTG Decks</title>
     <style>
-      .back {
-        /* background: #2b253a; */
-        background: #ecebef; /* temp for testing */
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
+      .deck-col {
+        height: 100%;
+        overflow-y: scroll;
+      }
+      .row-height {
+        height: 100vh;
       }
       a:link {
         float: right;
@@ -32,43 +31,58 @@
     </style>
   </head>
   <body>
-    <div class="back">
-      <a href="{{ url_for('logout') }}">Logout</a>
-      <a href="{{ url_for('home') }}">Home</a>
-      <br />
-      <div class="accordian" id="accordionPanelsStayOpenExample">
-        {% for deck in decks %}
-        <div class="accordion-item">
-          <h2 class="accordian-header" id="panelsStayOpen-heading{{deck.id}}">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapse{{deck.id}}"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapse{{deck.id}}"
-            >
-              {{ deck.name }}
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapse{{deck.id}}"
-            class="accordion-collapse collapse"
-            aria-labelledby="panelsStayOpen-heading{{deck.id}}"
-          >
-            <div class="accordion-body">
-              <div>&emsp; Main</div>
-              {% for card in deck.main %}
-              <div>&emsp;&emsp; {{ card.id }} {{ card.name }}</div>
-              {% endfor %} {% if deck.sideboard|length > 0 %}
-              <div>&emsp; Sideboard</div>
-              {% for card in deck.sideboard %}
-              <div>&emsp;&emsp; {{ card.id }} {{ card.name }}</div>
-              {% endfor %} {% endif %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('home') }}">Home</a>
+    <br />
+    <div class="container-fluid">
+      <div class="row row-height">
+        <div class="col-3 deck-col">
+          <div class="accordian" id="accordionPanelsStayOpenExample">
+            {% for deck in decks %}
+            <div class="accordion-item">
+              <h2
+                class="accordian-header"
+                id="panelsStayOpen-heading{{deck.id}}"
+              >
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapse{{deck.id}}"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapse{{deck.id}}"
+                >
+                  {{ deck.name }}
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapse{{deck.id}}"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-heading{{deck.id}}"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div>&emsp; Main</div>
+                    {% for card in deck.main %}
+                    <!-- <a href="{{ url_for(card_page, card_=card.id) }}"> -->
+                    <!-- working on adding links to cards right here -->
+                    <div>&emsp;&emsp; {{ card.name }} {{ card.count }}</div>
+                    <!-- </a> -->
+                    {% endfor %} {% if deck.sideboard|length > 0 %}
+                    <div>&emsp; Sideboard</div>
+                    {% for card in deck.sideboard %}
+                    <div>&emsp;&emsp; {{ card.name }} {{ card.count }}</div>
+                    {% endfor %} {% endif %}
+                  </div>
+                </div>
+              </div>
             </div>
+            {% endfor %}
           </div>
         </div>
-        {% endfor %}
+        <div class="col">
+          <p>hello world</p>
+        </div>
       </div>
     </div>
   </body>
