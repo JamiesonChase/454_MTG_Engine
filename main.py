@@ -1,7 +1,7 @@
 # standard library imports
 import asyncio
 
-from flask import Flask, url_for, render_template, request, redirect
+from flask import Flask, session, url_for, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 from flask_bcrypt import Bcrypt
 from whoosh.qparser import QueryParser, MultifieldParser, OrGroup
@@ -50,6 +50,7 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
+                session['uid'] = user.id
                 login_user(user)
                 return redirect(url_for('home'))
 
@@ -59,6 +60,7 @@ def login():
 # logout page, immediately redirects to the login page
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
+    session.pop('uid', None)   # None as default 2nd arg avoids KeyError if 'uid' not in session
     logout_user()
     return redirect(url_for('login'))
 
@@ -196,53 +198,37 @@ def card_page(card_id):
         suggestions=suggestions[:SUGGESTIONS_LIMIT])
 
 
-# decks page, shows list of pre-made and custom decks
+# deck page, shows the current user's deck
 @app.route('/decks', methods=('GET', 'POST'))
 @login_required
 def decks():
-    decks = []
+    # First get the current user's deck
+    user_deck = Deck.query.filter(Deck.user_id==session['uid']).first()
 
-    for deck_result in Deck.query.all():
-        deck = {}
-        deck['id'] = deck_result.id
-        deck['name'] = deck_result.name
-        cards_main = []
-        cards_sideboard = []
+    # Use the deck id to get all cards in the deck
+    cards = (db.session
+        .query(Card, DeckCards)
+        .join(DeckCards, Card.id==DeckCards.card_id)
+        .join(Deck, DeckCards.deck_id==Deck.id)
+        .filter(Deck.user_id==user_deck.id)
+    )
 
-        deck_cards_results = (db.session
-            .query(DeckCards,Card)
-            .join(Card, DeckCards.card_id==Card.id)
-            .filter(DeckCards.deck_id==deck_result.id)
-            .all()
-        )
-
-        for data, card in deck_cards_results:              
-            card_data = {
-                'id': card.id,
-                'name': card.name,
-                'count': data.count
-            }
-
-            # if indexed_card is not None:
-            #     card_data['url'] = indexed_card['url']
-
-            if not data.sideboard:
-                cards_main.append(card_data)
-            else:
-                cards_sideboard.append(card_data)
-
-        deck['main'] = cards_main
-        deck['sideboard'] = cards_sideboard
-        decks.append(deck)
-        break
-
-    return render_template('decks.html', decks=decks)
+    deck = []
+    for card, data in cards:
+        deck.append({
+            'name': card.name,
+            'count': data.count
+        })
+        
+    return render_template('deck.html', deck=deck)
 
 
 async def main():
+    # build whoosh index and sql db concurrently
+    # gather returns list of results in order of it's args
+    tasks = await asyncio.gather(indexData(), populateDB(db)) 
     global ix
-    tasks = await asyncio.gather(indexData(), populateDB(db))
-    ix = tasks[0]
+    ix = tasks[0]                                             
     app.run(debug=True)
 
 
