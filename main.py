@@ -131,9 +131,13 @@ def results():
 
 
 # individual card page, shows all stats for 1 card and suggestions for other cards
-@app.route('/card/<card_id>')
+@app.route('/card/<card_id>', methods=('GET','POST'))
 @login_required
 def card_page(card_id):
+    if request.method == 'POST':
+        # try to add or delete the card from the user's deck
+        pass
+
     SUGGESTIONS_LIMIT = 8
     suggestions = []
 
@@ -199,9 +203,9 @@ def card_page(card_id):
 
 
 # deck page, shows the current user's deck
-@app.route('/decks', methods=('GET', 'POST'))
+@app.route('/deck', methods=('GET', 'POST'))
 @login_required
-def decks():
+def deck():
     # First get the current user's deck
     user_deck = Deck.query.filter(Deck.user_id==session['uid']).first()
 
@@ -210,7 +214,8 @@ def decks():
         .query(Card, DeckCards)
         .join(DeckCards, Card.id==DeckCards.card_id)
         .join(Deck, DeckCards.deck_id==Deck.id)
-        .filter(Deck.user_id==user_deck.id)
+        .filter(Deck.id==1)   ## change for testing!!! Deck.user_id==user_deck.id
+        .all()
     )
 
     deck = []
@@ -219,7 +224,7 @@ def decks():
             'name': card.name,
             'count': data.count
         })
-        
+    print(deck)
     return render_template('deck.html', deck=deck)
 
 
