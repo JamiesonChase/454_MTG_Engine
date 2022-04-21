@@ -220,11 +220,9 @@ def deck():
 
     deck = []
     for card, data in cards:
-        deck.append({
-            'name': card.name,
-            'count': data.count
-        })
-    print(deck)
+        print(type(card), type(data))
+        deck.append(card.__dict__ | data.__dict__)   # merge them as dicts
+
     return render_template('deck.html', deck=deck)
 
 

@@ -15,7 +15,7 @@
     ></script>
     <title>MTG Deck</title>
     <style>
-      a:link {
+      #route-link {
         float: right;
         margin-right: 10px;
         color: #897d9c;
@@ -24,16 +24,15 @@
     </style>
   </head>
   <body>
-    <a href="{{ url_for('logout') }}">Logout</a>
-    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('logout') }}" id="route-link">Logout</a>
+    <a href="{{ url_for('home') }}" id="route-link">Home</a>
     <br />
     <div class="container-fluid">
       {% for card in deck %}
-      <div>{{ card.name }} {{ card.count }}</div>
+      <a href="{{ url_for('card_page', card_id=card.id) }}">
+        <div>{{ card.name }} {{ card.count }}</div>
+      </a>
       {% endfor %}
-      <div class="col">
-        <p>hello world</p>
-      </div>
     </div>
   </body>
 </html>
