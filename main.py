@@ -138,29 +138,29 @@ def card_page(card_id):
     if request.method == 'POST':
         current_user_id = session['uid']
 
+        user_deck = Deck.query.filter(Deck.user_id==current_user_id).first()
         card_in_deck = (db.session
             .query(DeckCards)
-            .join(Deck, DeckCards.deck_id==Deck.id)
-            .filter(Deck.user_id==current_user_id)
+            .filter(DeckCards.deck_id==user_deck.id)
             .filter(DeckCards.card_id==card_id)
             .first()
         )
         exists = card_in_deck is not None
-        
-        print(f'{card_id} in user\'s deck: {exists}')
 
         if 'add' in request.form:
-            print("ADD CARD")
-            # check if card exists in user's deck
-                # yes: increment count
-                # no: add w/count = 1
             if exists:
                 card_in_deck.count += 1
+            else:
+                card_to_add = DeckCards(deck_id=user_deck.id, card_id=card_id, count=1)
+                db.session.add(card_to_add)
+            db.session.commit()
         elif "del" in request.form:
-            print("DEL Card")
-            # check if card exists in user's deck
-                # yes: decrement count
-                # no: nothing happens
+            if exists:
+                if card_in_deck.count > 1:
+                    card_in_deck.count -= 1
+                else:
+                    db.session.delete(card_in_deck)
+                db.session.commit()
 
     SUGGESTIONS_LIMIT = 8
     suggestions = []
@@ -238,14 +238,12 @@ def deck():
         .query(Card, DeckCards)
         .join(DeckCards, Card.id==DeckCards.card_id)
         .join(Deck, DeckCards.deck_id==Deck.id)
-        #.filter(Deck.user_id==user_deck.id)   # this line will send the user's deck to the page
-        .filter(Deck.id==1)                    # temporary for testing
+        .filter(Deck.user_id==current_user_id)
         .all()
     )
 
     deck = []
     for card, data in cards:
-        print(type(card), type(data))
         #deck.append(card.__dict__ | data.__dict__)   # merge them as dicts, requires Python 3.9+
         deck.append(dict(list(card.__dict__.items()) + list(data.__dict__.items())))
     return render_template('deck.html', deck=deck)
