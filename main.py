@@ -134,9 +134,12 @@ def results():
 @app.route('/card/<card_id>', methods=('GET','POST'))
 @login_required
 def card_page(card_id):
+    # try to add or delete the card from the user's deck
     if request.method == 'POST':
-        # try to add or delete the card from the user's deck
-        pass
+        if 'add' in request.form:
+            print("ADD CARD")
+        elif "del" in request.form:
+            print("DEL Card")
 
     SUGGESTIONS_LIMIT = 8
     suggestions = []
@@ -155,7 +158,8 @@ def card_page(card_id):
                 break
 
     # Merge the card from sql w/ the card's data from whoosh
-    card = db_card | whoosh_card
+    #card = db_card | whoosh_card
+    card = dict(list(db_card.items()) + list(whoosh_card.items()))
 
     # Find (if exists) half of the suggestions based on the most popular
     # cards in decks that the current card appears in
@@ -221,8 +225,8 @@ def deck():
     deck = []
     for card, data in cards:
         print(type(card), type(data))
-        deck.append(card.__dict__ | data.__dict__)   # merge them as dicts
-
+        #deck.append(card.__dict__ | data.__dict__)   # merge them as dicts
+        deck.append(dict(list(card.__dict__.items()) + list(data.__dict__.items())))
     return render_template('deck.html', deck=deck)
 
 

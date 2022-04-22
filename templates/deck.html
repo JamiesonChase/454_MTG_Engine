@@ -8,6 +8,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='templates.css') }}"
+      media="all"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -21,6 +26,19 @@
         color: #897d9c;
         text-decoration: none;
       }
+      img {
+        position: fixed;
+        bottom: 0;
+        top: 2%;
+        left: 30%;
+        max-width: 25%;
+        border-radius: 20px;
+        display: none;
+    }
+
+      .list:hover img {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -30,9 +48,13 @@
     <div class="container-fluid">
       {% for card in deck %}
       <a href="{{ url_for('card_page', card_id=card.id) }}">
-        <div>{{ card.name }} {{ card.count }}</div>
+        <div class="list">
+          {{ card.name }} {{ card.count }}
+          <img src="{{ card.image_url }}">
+        </div>
       </a>
       {% endfor %}
     </div>
+
   </body>
 </html>
