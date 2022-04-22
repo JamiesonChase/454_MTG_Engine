@@ -16,7 +16,7 @@
         text-decoration: none;
       }
       .button {
-        background-color: #4CAF50;
+        background-color: #4caf50;
         border: none;
         color: white;
         padding: 15px 32px;
@@ -27,7 +27,7 @@
         margin: 4px 2px;
         cursor: pointer;
       }
-        .button2 {
+      .button2 {
         background-color: #f44336;
         border: none;
         color: white;
@@ -67,8 +67,8 @@
           </div>
           <div class="buttons">
             <form method="post">
-              <input type="submit" class="button" name="add" value="ADD card">
-              <input type="submit" class="button2" name="del" value="Delete card">
+              <input type="submit" class="button" name="add" value="Add Card" />
+              <input type="submit" class="button2" name="del" value="Delete Card" />
             </form>
           </div>
         </div>
@@ -79,7 +79,7 @@
       <div class="inner-flex">
         <div class="card-grid">
           <div class="card-grid-inner">
-            {% for i in range(8) %}
+            {% for i in range(suggestions|length) %}
             <div class="card-grid-item">
               <a
                 class="card-grid-item-card"

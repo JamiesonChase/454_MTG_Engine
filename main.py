@@ -136,10 +136,31 @@ def results():
 def card_page(card_id):
     # try to add or delete the card from the user's deck
     if request.method == 'POST':
+        current_user_id = session['uid']
+
+        card_in_deck = (db.session
+            .query(DeckCards)
+            .join(Deck, DeckCards.deck_id==Deck.id)
+            .filter(Deck.user_id==current_user_id)
+            .filter(DeckCards.card_id==card_id)
+            .first()
+        )
+        exists = card_in_deck is not None
+        
+        print(f'{card_id} in user\'s deck: {exists}')
+
         if 'add' in request.form:
             print("ADD CARD")
+            # check if card exists in user's deck
+                # yes: increment count
+                # no: add w/count = 1
+            if exists:
+                card_in_deck.count += 1
         elif "del" in request.form:
             print("DEL Card")
+            # check if card exists in user's deck
+                # yes: decrement count
+                # no: nothing happens
 
     SUGGESTIONS_LIMIT = 8
     suggestions = []
@@ -157,7 +178,7 @@ def card_page(card_id):
                 whoosh_card = dict(result)
                 break
 
-    # Merge the card from sql w/ the card's data from whoosh
+    # Merge the card from sql w/ the card's data from whoosh, requires Python 3.9+
     #card = db_card | whoosh_card
     card = dict(list(db_card.items()) + list(whoosh_card.items()))
 
@@ -210,22 +231,22 @@ def card_page(card_id):
 @app.route('/deck', methods=('GET', 'POST'))
 @login_required
 def deck():
-    # First get the current user's deck
-    user_deck = Deck.query.filter(Deck.user_id==session['uid']).first()
+    current_user_id = session['uid']
 
-    # Use the deck id to get all cards in the deck
+    # Get all cards in the user's deck
     cards = (db.session
         .query(Card, DeckCards)
         .join(DeckCards, Card.id==DeckCards.card_id)
         .join(Deck, DeckCards.deck_id==Deck.id)
-        .filter(Deck.id==1)   ## change for testing!!! Deck.user_id==user_deck.id
+        #.filter(Deck.user_id==user_deck.id)   # this line will send the user's deck to the page
+        .filter(Deck.id==1)                    # temporary for testing
         .all()
     )
 
     deck = []
     for card, data in cards:
         print(type(card), type(data))
-        #deck.append(card.__dict__ | data.__dict__)   # merge them as dicts
+        #deck.append(card.__dict__ | data.__dict__)   # merge them as dicts, requires Python 3.9+
         deck.append(dict(list(card.__dict__.items()) + list(data.__dict__.items())))
     return render_template('deck.html', deck=deck)
 
