@@ -2,16 +2,28 @@
 
 Building website search engine and deck builder for MTG cards with Whoosh! and flask.
 
-# Libraries needed:
+# Dependencies
 
-```
-pip install Flask, Flask-Bcrypt, Flask-Login, Flask-SQLAlchemy, Flask-WTF, bcrypt, SQLAlchemy, Whoosh, WTForms,
-```
+Packages:
 
-# Running Instructions:
+<ul>
+  <li>Flask</li>
+  <li>Flask-Bcrypt</li>
+  <li>Flask-Login</li>
+  <li>Flask-SQLAlchemy</li>
+  <li>Flask-WTF</li>
+  <li>bcrypt</li>
+  <li>SQLAlchemy</li>
+  <li>Whoosh</li>
+  <li>WTForms</li>
+</ul>
+
+Python version: 3.8+
+
+# Running Instructions
 
 1. Run main.py
-2. open site on http://127.0.0.1:5000/
+2. Open site at http://127.0.0.1:5000/
 
 # Screenshots
 
