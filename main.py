@@ -101,14 +101,62 @@ def home():
     return render_template('home.html') #renders main homepage
 
 
+global n
 # results page, shown after submitting a search on the main page
 @app.route('/results', methods=('GET','POST'))
 @login_required
 def results():
+    global n
     if request.method == 'POST': # processes post request from searching
-        q = request.form['q']
-        if len(q) > 0:
-            return redirect(url_for('results',q=q))
+        if "NEXT" in request.form:
+            n = n + 1
+            search = request.args['q']
+            q = MultifieldParser(['name', 'desc', 'flavor', 'types'], schema=ix.schema).parse(search)
+
+            # First get the card's ids from whoosh
+            cards = []
+            ids = []
+            with ix.searcher() as s:
+                results = s.search_page(q, n, pagelen=12)
+                for result in results:
+                    ids.append(result['id'])
+
+            # Next query the db for the results using the card's ids
+            # to get their url, image_url.
+            cards_from_db = Card.query.filter(Card.id.in_(ids)).all()
+            for card in cards_from_db:
+                cards.append(card)
+
+            return render_template('results.html', msg=search, cards=cards)
+        elif "PREV" in request.form:
+            if n == 1:
+                n = 1
+            else:
+                n -= 1
+            search = request.args['q']
+            q = MultifieldParser(['name', 'desc', 'flavor', 'types'], schema=ix.schema).parse(search)
+
+            # First get the card's ids from whoosh
+            cards = []
+            ids = []
+            with ix.searcher() as s:
+                results = s.search_page(q, n, pagelen=12)
+                for result in results:
+                    ids.append(result['id'])
+
+            # Next query the db for the results using the card's ids
+            # to get their url, image_url.
+            cards_from_db = Card.query.filter(Card.id.in_(ids)).all()
+            for card in cards_from_db:
+                cards.append(card)
+
+            return render_template('results.html', msg=search, cards=cards)
+
+        else:
+            q = request.form['q']
+            if len(q) > 0:
+                return redirect(url_for('results',q=q))
+    n = 1
 
     search = request.args['q'] # getting the text from the query
     q = MultifieldParser(['name', 'desc', 'flavor', 'types'], schema=ix.schema).parse(search)
@@ -260,4 +308,5 @@ async def main():
 
 # entry point to the application
 if __name__ == '__main__':
+    n = 0
     asyncio.run(main())
