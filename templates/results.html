@@ -27,7 +27,7 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        background: #2b253a !important;
+        background: #362e49 !important;
       }
 
       .search {
@@ -73,7 +73,7 @@
         justify-content: center;
         align-items: center;
         color: white;
-        background-color: #2b253a;
+        background-color: #362e49;
       }
 
       a:link {
@@ -90,6 +90,34 @@
         width: 1000px;
         grid-gap: 5px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+        .button {
+        position: relative;
+        background-color: #4CAF50;
+        left: 50%;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+        .button2 {
+        position: relative;
+        left: 27%;
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -145,5 +173,11 @@
         </div>
       </div>
     </div>
+            <div class="buttons">
+            <form method="post">
+              <input type="submit" class="button" name="NEXT" value="NEXT PAGE">
+              <input type="submit" class="button2" name="PREV" value="PREV PAGE">
+            </form>
+          </div>
   </body>
 </html>
