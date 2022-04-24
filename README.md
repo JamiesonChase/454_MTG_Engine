@@ -32,5 +32,5 @@ Python version: 3.8+
   <img src="/Screenshots/HomePage_concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/Search_concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/CardPage_concept.png" alt="drawing" width="500"/>
-  <img src="/Screenshots/Deck_concept.png" alt="drawing" width="500"/>
+  <!-- <img src="/Screenshots/Deck_concept.png" alt="drawing" width="500"/> -->
 </p>
