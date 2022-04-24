@@ -30,7 +30,7 @@ Python version: 3.8+
 <p float="left">
   <img src="/Screenshots/Login_concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/HomePage_concept.png" alt="drawing" width="500"/>
-  <img src="/Screenshots/Search_concept.png" alt="drawing" width="500"/>
+  <img src="/Screenshots/Search_Concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/CardPage_concept.png" alt="drawing" width="500"/>
   <img src="/Screenshots/Deck_concept.png" alt="drawing" width="500"/>
 </p>
