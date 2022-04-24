@@ -2,6 +2,10 @@
 
 Building website search engine and deck builder for MTG cards with Whoosh! and flask.
 
+Team Members:
+- Chase Jamieson
+- Taron Linge
+
 # Dependencies
 
 Packages:
