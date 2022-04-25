@@ -29,7 +29,7 @@ Python version: 3.8+
 
 1. Run main.py
 2. Open site at http://127.0.0.1:5000/
-3. To build the index and database at startup, delete ./data/indexes\* and ./data/database.db then re-run main.py
+3. To build the index and database at startup, delete ./data/indexes/ and ./data/database.db then run main.py
 
 # Screenshots
 
